@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-starter-theme-workspace",
+  "scripts": {
+    "dev": "yarn workspace example develop",
+    "build": "yarn workspace example build"
+  },
+  "private": true,
+  "workspaces": [
+    "@pinggod/gatsby-theme-wink",
+    "example"
+  ]
+}

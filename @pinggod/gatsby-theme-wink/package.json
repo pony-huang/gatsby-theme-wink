@@ -1,0 +1,10 @@
+{
+  "name": "@pinggod/gatsby-theme-wink",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "pinggodstudio@gmail.com",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.13.82"
+  }
+}
