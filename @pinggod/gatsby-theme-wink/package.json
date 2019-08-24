@@ -1,6 +1,6 @@
 {
   "name": "@pinggod/gatsby-theme-wink",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "index.js",
   "author": "pinggodstudio@gmail.com",
   "license": "MIT",
@@ -10,7 +10,8 @@
     "typings": "apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --includes=src/**/*.tsx --tagName=graphql --addTypename --outputFlat typings"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.3.1",
@@ -37,9 +38,7 @@
     "react-helmet": "^5.2.1",
     "remixicon": "^1.3.1",
     "styled-components": "^4.3.2",
-    "typescript": "^3.5.3",
-    "source-map-support": "^0.5.13",
-    "ts-node": "^8.3.0"
+    "typescript": "^3.5.3"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.137",
