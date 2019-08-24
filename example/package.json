@@ -5,13 +5,11 @@
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop",
     "build": "gatsby build"
   },
   "dependencies": {
     "gatsby": "^2.13.82",
-    "@pinggod/gatsby-theme-wink": "*",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "@pinggod/gatsby-theme-wink": "*"
   }
 }
