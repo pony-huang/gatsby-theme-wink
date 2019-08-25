@@ -11,11 +11,7 @@ export default function HTML(props) {
                     name="viewport"
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
-                <link
-                    rel="shortcut icon"
-                    type="image/png"
-                    href="/favicon.png"
-                />
+                <link rel="shortcut icon" href="/favicon.ico" />
                 <link
                     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
                     rel="stylesheet"

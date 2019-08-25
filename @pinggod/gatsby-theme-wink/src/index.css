@@ -1,36 +1,36 @@
 @font-face {
     font-family: Cereal;
-    src: url("/fonts/airbnb-cereal-light.ttf");
+    src: url("/fonts/airbnb-cereal-light.woff") format("woff");
     font-weight: 100;
     font-style: normal;
 }
 @font-face {
     font-family: Cereal;
-    src: url("/fonts/airbnb-cereal-book.ttf");
+    src: url("/fonts/airbnb-cereal-book.woff") format("woff");
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: Cereal;
-    src: url("/fonts/airbnb-cereal-medium.ttf");
+    src: url("/fonts/airbnb-cereal-medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: Cereal;
-    src: url("/fonts/airbnb-cereal-bold.ttf");
+    src: url("/fonts/airbnb-cereal-bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: Cereal;
-    src: url("/fonts/airbnb-cereal-extra-bold.ttf");
+    src: url("/fonts/airbnb-cereal-extra-bold.woff") format("woff");
     font-weight: 800;
     font-style: normal;
 }
 @font-face {
     font-family: Cereal;
-    src: local("/fonts/airbnb-cereal-black.ttf");
+    src: url("/fonts/airbnb-cereal-black.woff") format("woff");
     font-weight: 900;
     font-style: normal;
 }

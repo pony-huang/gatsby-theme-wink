@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { Helmet } from 'react-helmet';
-import Styled from 'styled-components';
-import Header from '../header';
-import Footer from '../footer';
-import pkg from '../../../package.json';
+import { Helmet } from "react-helmet";
+import Styled from "styled-components";
+import Header from "../header";
+import Footer from "../footer";
+import pkg from "../../../package.json";
 
 const ContentWrapper = Styled.div`
     margin-top: 64px;
@@ -12,14 +12,10 @@ const ContentWrapper = Styled.div`
 const IndexPage = (props: any): JSX.Element => (
     <Fragment>
         <Helmet>
-            <title>
-                {pkg.description}
-            </title>
+            <title>{pkg.name}</title>
         </Helmet>
         <Header />
-        <ContentWrapper>
-            {props.children}
-        </ContentWrapper>
+        <ContentWrapper>{props.children}</ContentWrapper>
         <Footer />
     </Fragment>
 );

@@ -1,6 +1,6 @@
-import { FluidObject } from 'gatsby-image';
+import { FluidObject } from "gatsby-image";
 
-declare module 'gatsby-plugin-mdx';
+declare module "gatsby-plugin-mdx";
 
 declare namespace Rexlnt {
     interface Site {

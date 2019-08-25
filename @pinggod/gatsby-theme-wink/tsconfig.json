@@ -3,10 +3,7 @@
         "moduleResolution": "node",
         "target": "esnext",
         "module": "commonjs",
-        "lib": [
-            "esnext",
-            "dom"
-        ],
+        "lib": ["esnext", "dom"],
         "strict": true,
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
@@ -16,6 +13,7 @@
         "noImplicitAny": true,
         "noEmit": true,
         "jsx": "preserve",
+        "allowJs": true,
         "downlevelIteration": true,
         "skipLibCheck": true,
         "resolveJsonModule": true
@@ -23,6 +21,8 @@
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx",
-        "typings/index.d.ts"
+        "src/**/*.js",
+        "typings/index.d.ts",
+        "src/components/layout/index.tsx"
     ]
 }

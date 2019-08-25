@@ -1,3 +1,3 @@
-import 'normalize.css';
-import 'remixicon/fonts/remixicon.css';
-import './src/index.css';
+import "normalize.css";
+import "remixicon/fonts/remixicon.css";
+import "./src/index.css";
