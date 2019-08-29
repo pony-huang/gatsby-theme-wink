@@ -2,38 +2,89 @@ import { FluidObject } from "gatsby-image";
 
 declare module "gatsby-plugin-mdx";
 
-declare namespace Rexlnt {
-    interface Site {
-        siteMetadata: {
-            title: string;
-            description: string;
-        };
+declare namespace Wink {
+    export interface RootTypes {
+        data: Data;
     }
 
-    interface Post {
+    export interface Data {
+        site: Site;
+        allMdx: AllMdx;
+    }
+
+    export interface Site {
+        siteMetadata: SiteMetadata;
+        buildTime: Date;
+    }
+
+    export interface SiteMetadata {
+        title: string;
+        description: string;
+        siteUrl: string;
+    }
+
+    export interface AllMdx {
+        totalCount: number;
+        edges: Edge[];
+    }
+
+    export interface Edge {
+        previous?: NodeBase;
+        node: NodeDetail;
+        next?: NodeBase;
+    }
+
+    export interface NodeBase {
         id: string;
-        frontmatter: {
-            title: string;
-            date: string;
-            categories: string;
-            keywords: string;
-            description: string;
-            cover: {
-                childImageSharp: {
-                    fluid: FluidObject;
-                };
-            };
-        };
-        fields: {
-            slug: string;
-        };
+        fields: Fields;
+        frontmatter: Frontmatter;
+        timeToRead: number;
+        wordCount: WordCount;
+    }
+
+    export interface NodeDetail extends NodeBase {
+        internal: Internal;
+        tableOfContents: TableOfContents;
         body: string;
     }
 
-    interface AllPost {
-        totalCount: number;
-        posts: {
-            post: Post;
-        }[];
+    export interface Fields {
+        slug: string;
+    }
+
+    export interface Internal {
+        type: string;
+        contentDigest: string;
+    }
+
+    export interface Frontmatter {
+        title: string;
+        date: Date;
+        description: string;
+        coverAuthor: string;
+        coverOriginalUrl: string;
+        cover: Cover;
+    }
+
+    export interface Cover {
+        childImageSharp: {
+            fluid: FluidObject;
+        };
+    }
+
+    export interface TableOfContents {
+        items: Item[];
+    }
+
+    export interface Item {
+        url: string;
+        title: string;
+        items?: Item[];
+    }
+
+    export interface WordCount {
+        paragraphs: number;
+        sentences: number;
+        words: number;
     }
 }

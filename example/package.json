@@ -9,7 +9,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.13.82",
+    "gatsby": "^2.14.3",
     "@pinggod/gatsby-theme-wink": "*"
   }
 }
