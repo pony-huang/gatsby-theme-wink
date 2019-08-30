@@ -1,15 +1,9 @@
 import React from 'react';
 import Styled from 'styled-components';
-import { capitalize } from 'lodash';
-import { A } from '../a';
+import { InnerLink } from '../link';
 import { Icon } from '../Icon';
 
 const Wrapper = Styled.div`
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
     background: white;
 `;
 
@@ -17,9 +11,9 @@ const Head = Styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
-    height: 64px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 48px 24px;
 `;
 
 const LogoIcon = Styled(Icon).attrs({
@@ -30,7 +24,7 @@ const LogoIcon = Styled(Icon).attrs({
     vertical-align: middle;
 `;
 
-const Title = Styled(A).attrs({
+const Title = Styled(InnerLink).attrs({
     to: '/',
 })`
     height: 64px;
@@ -39,20 +33,6 @@ const Title = Styled(A).attrs({
     line-height: 64px;
     font-size: 16px;
     font-weight: 700;
-    font-family: Cereal;
-`;
-
-const Nav = Styled.nav`
-    display: flex;
-    align-items: center;
-`;
-
-const NavItem = Styled(A)`
-    height: 64px;
-    line-height: 64px;
-    padding: 0 16px;
-    font-size: 16px;
-    font-weight: 300;
     font-family: Cereal;
 `;
 
@@ -67,27 +47,15 @@ const SearchIcon = Styled(Icon).attrs({
     cursor: pointer;
 `;
 
-const Header = () => {
-    let menu = '';
-
-    if (typeof window !== 'undefined') {
-        menu = window ? window.location.pathname.split('/')[1] : '';
-    }
-
+const Header = (): JSX.Element => {
     return (
         <Wrapper>
             <Head>
                 <Title>
                     <LogoIcon />
                     REXLNT
-                    {menu && `  /  ${capitalize(menu)}`}
                 </Title>
-                <Nav>
-                    <NavItem to="/articles">Articles</NavItem>
-                    <NavItem to="/projects">Projects</NavItem>
-                    <NavItem to="/about">About</NavItem>
-                    <SearchIcon/>
-                </Nav>
+                <SearchIcon />
             </Head>
         </Wrapper>
     );

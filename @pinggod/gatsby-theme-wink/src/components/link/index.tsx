@@ -1,7 +1,12 @@
 import { Link } from 'gatsby';
 import Styled from 'styled-components';
 
-export const A = Styled(Link)`
+export const OuterLink = Styled.a.attrs({
+    target: "_blank",
+    rel: "noopener noreferrer"
+})``;
+
+export const InnerLink = Styled(Link)`
     color: black;
     cursor: pointer;
     text-decoration: none;

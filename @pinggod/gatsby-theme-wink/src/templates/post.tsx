@@ -23,7 +23,6 @@ const Post = (props: Props): React.ReactElement => {
 export default Post;
 
 // import React from "react";
-// import { graphql } from "gatsby";
 // // @ts-ignore
 // import { MDXRenderer } from 'gatsby-plugin-mdx';
 // import Styled from "styled-components";
@@ -79,42 +78,5 @@ export default Post;
 //         </Layout>
 //     );
 // };
-
-// export const query = graphql`
-//     query Posts2 ($id: String!) {
-//         post: mdx(id: {eq: $id}) {
-//             id
-//             frontmatter {
-//                 title
-//                 date(formatString:"MMM DD, YYYY")
-//                 categories
-//                 keywords
-//                 description
-//                 cover {
-//                 childImageSharp {
-//                     fluid(maxWidth: 1200) {
-//                     base64
-//                     tracedSVG
-//                     aspectRatio
-//                     src
-//                     srcSet
-//                     srcWebp
-//                     srcSetWebp
-//                     sizes
-//                     originalImg
-//                     originalName
-//                     presentationWidth
-//                     presentationHeight
-//                     }
-//                 }
-//                 }
-//             }
-//             fields {
-//                 slug
-//             }
-//             body
-//         }
-//     }
-// `;
 
 // export default PostPage;

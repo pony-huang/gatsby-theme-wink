@@ -3,16 +3,22 @@ import { Helmet } from "react-helmet";
 import Styled from "styled-components";
 import Header from "../header";
 import Footer from "../footer";
-import pkg from "../../../package.json";
+
+interface Props {
+    title: string;
+    description: string;
+    children: React.ReactElement;
+}
 
 const ContentWrapper = Styled.div`
     margin-top: 64px;
 `;
 
-const IndexPage = (props: any): JSX.Element => (
+const IndexPage = (props: Props): JSX.Element => (
     <Fragment>
         <Helmet>
-            <title>{pkg.name}</title>
+            <title>{props.title}</title>
+            <meta name="description" content={props.description} />
         </Helmet>
         <Header />
         <ContentWrapper>{props.children}</ContentWrapper>

@@ -13,12 +13,12 @@ module.exports = ({
                 path: blogPath
             }
         },
-        // {
-        //     resolve: `gatsby-plugin-page-creator`,
-        //     options: {
-        //         path: `${__dirname}/src/pages`
-        //     }
-        // },
+        {
+            resolve: `gatsby-plugin-page-creator`,
+            options: {
+                path: `${__dirname}/src/pages`
+            }
+        },
         {
             resolve: `gatsby-plugin-mdx`,
             options: {

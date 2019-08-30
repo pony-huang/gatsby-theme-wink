@@ -12,18 +12,6 @@ export default function HTML(props) {
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
                 <link rel="shortcut icon" href="/favicon.ico" />
-                <link
-                    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
-                    rel="stylesheet"
-                />
-                <link
-                    href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700,800&display=swap"
-                    rel="stylesheet"
-                />
-                <link
-                    href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i"
-                    rel="stylesheet"
-                />
                 {props.headComponents}
             </head>
             <body {...props.bodyAttributes}>

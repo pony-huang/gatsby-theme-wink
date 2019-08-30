@@ -1,5 +1,8 @@
 import React from "react";
 import { Wink } from "../../typings";
+import Layout from "../components/layout";
+import { PostList } from "../components/post-list";
+import { InnerLink } from "../components/link";
 
 interface Context extends Wink.RootTypes {
     prevPath?: string;
@@ -11,23 +14,23 @@ interface Props {
 }
 
 const Page = (props: Props): React.ReactElement => {
-    console.info("props.pageContext.data: ", props.pageContext.data);
-    console.info("props.pageContext.prevPath: ", props.pageContext.prevPath);
-    console.info("props.pageContext.nextPath: ", props.pageContext.nextPath);
+    const { data, prevPath, nextPath } = props.pageContext;
+    const prevNode = prevPath ? <InnerLink to={prevPath}>PREV</InnerLink> : null;
+    const nextNode = nextPath ? <InnerLink to={nextPath}>NEXT</InnerLink> : null;
 
-    return <p>HomePage 123</p>;
+    return (
+        <Layout
+            title={data.site.siteMetadata.title}
+            description={data.site.siteMetadata.description}>
+            <>
+                <PostList data={data} />
+                <div>
+                    {prevNode}
+                    {nextNode}
+                </div>
+            </>
+        </Layout>
+    );
 };
 
 export default Page;
-
-// import React from "react";
-// import Layout from "../components/layout";
-// import PostList from "../components/post-list";
-
-// const IndexPage = (): React.ReactElement => (
-//     <Layout>
-//         <PostList />
-//     </Layout>
-// );
-
-// export default IndexPage;

@@ -1,14 +1,14 @@
-import React from 'react';
-import Styled from 'styled-components';
-import { A } from '../a';
-import { Icon } from '../Icon';
+import React from "react";
+import Styled from "styled-components";
+import { Icon } from "../Icon";
 
 const Wrapper = Styled.footer`
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
-    height: 64px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 48px 0;
 `;
 
 const Copyright = Styled.span`
@@ -20,18 +20,30 @@ const Copyright = Styled.span`
     font-weight: 300;
 `;
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
     return (
         <Wrapper>
             <Copyright>
+                Zeno Sun
                 <Icon type="heart-2" />
-                &nbsp;
                 {new Date().getUTCFullYear()}
-                &nbsp;
-                <A to="/about">Zeno Sun</A>
             </Copyright>
+            <div>
+                <a href="">
+                    <Icon type="github" mode="fill" />
+                </a>
+                <a href="">
+                    <Icon type="twitter" mode="fill" />
+                </a>
+                <a href="">
+                    <Icon type="weibo" mode="fill" />
+                </a>
+                <a>
+                    <Icon type="wechat" mode="fill" />
+                </a>
+            </div>
         </Wrapper>
     );
-}
+};
 
 export default Footer;

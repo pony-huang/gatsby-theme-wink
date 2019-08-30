@@ -29,7 +29,7 @@ const queryAllPosts = `
         }
         frontmatter {
             title
-            date
+            date(formatString: "MMM DD, YYYY")
             description
             coverAuthor
             coverOriginalUrl
@@ -115,7 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
             path: pageNo === 1 ? `/` : `/page/${pageNo}`,
             component: pageTemplate,
             context: {
-                prevPath: pageNo === 1 ? null : `/page/${pageNo - 1}`,
+                prevPath: pageNo <= 1 ? null : pageNo === 2 ? `/` : `/page/${pageNo - 1}`,
                 nextPath: endPosition >= totalCount ? null : `/page/${pageNo + 1}`,
                 data: {
                     site,
