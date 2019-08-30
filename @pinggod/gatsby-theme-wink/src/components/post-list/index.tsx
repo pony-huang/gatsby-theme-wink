@@ -6,6 +6,7 @@ import { PostCard } from '../post-card';
 const Wrapper = Styled.section`
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 48px;
 `;
 
 const List = Styled.div`

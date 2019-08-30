@@ -1,7 +1,7 @@
 ---
-title: "Migrating from Medium to Gatsby"
+title: "中文Migrating from Medium to Gatsby"
 description: >-
-  I recently moved my blog from Medium to a self-managed blog built with Gatsby, then deployed on Netlify.
+  I recently moved my 中文 blog from Medium to a self-managed blog built with Gatsby, then deployed on Netlify.
 date: "2019-03-17T03:45:03.995Z"
 categories:
   - engineering
@@ -20,7 +20,7 @@ coverOriginalUrl: https://unsplash.com/photos/VvKdB1FYNZs?utm_source=unsplash&ut
 
 I recently moved my blog from [Medium](https://medium.com/@sugarpirate) to a self-managed blog built with [Gatsby](https://www.gatsbyjs.org/) in the [open](https://github.com/poteto/no.lol), then deployed on [Netlify](https://www.netlify.com/). After a few weeks of fiddling around, I feel like I've landed on something I'm mostly happy with.
 
-Despite my many new & old frustrations with Medium, I really enjoyed the writing experience. Whenever I've built my own blogs in the past, inevitably, I spent more time designing and building the damn thing instead of writing content. On Medium, I could *just write*.
+Despite my many new & old frustrations with Medium, I really enjoyed the writing experience. Whenever I've built my own blogs in the past, inevitably, I spent more time designing and building the damn thing instead of writing content. On Medium, I could _just write_.
 
 In this post I'll describe how I did the transition, and what tools I found along the way that have made the experience of managing my own blog with Gatsby a somewhat painless one. Let's get started!
 
@@ -30,7 +30,7 @@ The first step is to [download all your information from Medium](https://medium.
 
 ![Medium posts are exported as html files](./Screenshot 2019-03-16 18.10.24.png "Medium posts are exported as html files")
 
-Medium posts are exported as html files in the `posts` folder, so we'll want something to convert them to markdown. Alternatively, you could use something like [gatsby-source-medium](https://www.gatsbyjs.org/packages/gatsby-source-medium/?=medium) or [gatsby-source-rss](https://github.com/jondubin/gatsby-source-rss) to add this data to [Gatsby's GraphQL endpoint](https://www.gatsbyjs.org/docs/querying-with-graphql/). I preferred having actual  files in my repo so I could make edits as necessary.
+Medium posts are exported as html files in the `posts` folder, so we'll want something to convert them to markdown. Alternatively, you could use something like [gatsby-source-medium](https://www.gatsbyjs.org/packages/gatsby-source-medium/?=medium) or [gatsby-source-rss](https://github.com/jondubin/gatsby-source-rss) to add this data to [Gatsby's GraphQL endpoint](https://www.gatsbyjs.org/docs/querying-with-graphql/). I preferred having actual files in my repo so I could make edits as necessary.
 
 After some googling, I found [medium-2-md](https://github.com/gautamdhameja/medium-2-md) by [Gautam Dhameja](https://github.com/gautamdhameja) which seemed promising. You point this script at a local folder containing your Medium posts, and it generates a folder full of markdown files together with basic frontmatter. Having frontmatter included is useful, because it allows us to add interesting metadata to our posts that we can then use when building our blog in Gatsby. Frontmatter looks like this (everything between the `---`):
 
@@ -85,9 +85,9 @@ Once you've cleaned up your posts, you should have a bare bones, basic blog buil
 
 Which parts of my Gatsby app are static? It wasn't initially obvious to me. It eventually dawned on me that Gatsby tries to do as many things at build time in order to generate static assets. For example, if you can have Gatsby query your data at build time (such as from your filesystem, an external API, a database, etc), then static files can be generated from that data. The resulting artifact is then completely static.
 
-During run time, your Gatsby app can respond immediately with static assets while hydrating itself with [additional data](https://www.gatsbyjs.org/docs/building-apps-with-gatsby/) / interactivity as needed after initial render. It's not *just* a static site generator! It also uses GraphQL in a fairly novel way as a layer for your React client to work with. For example, the markdown blog posts you've added, the metadata for your site, the image assets and more are all exposed to your React client via GraphQL.
+During run time, your Gatsby app can respond immediately with static assets while hydrating itself with [additional data](https://www.gatsbyjs.org/docs/building-apps-with-gatsby/) / interactivity as needed after initial render. It's not _just_ a static site generator! It also uses GraphQL in a fairly novel way as a layer for your React client to work with. For example, the markdown blog posts you've added, the metadata for your site, the image assets and more are all exposed to your React client via GraphQL.
 
-The cool thing about Gatsby's architecture, is that in addition to the runtime ecosystem for application concerns via React components, it also opens up the possibility for reusable [plugins](https://www.gatsbyjs.org/plugins/) that work on your *build* itself. For example, if you wanted to create an RSS feed for your blog, you could quickly download a plugin ([gatsby-plugin-feed](https://www.gatsbyjs.org/packages/gatsby-plugin-feed/)) that can do that for you at build time. That's amazing!
+The cool thing about Gatsby's architecture, is that in addition to the runtime ecosystem for application concerns via React components, it also opens up the possibility for reusable [plugins](https://www.gatsbyjs.org/plugins/) that work on your _build_ itself. For example, if you wanted to create an RSS feed for your blog, you could quickly download a plugin ([gatsby-plugin-feed](https://www.gatsbyjs.org/packages/gatsby-plugin-feed/)) that can do that for you at build time. That's amazing!
 
 ### Automate all the things
 

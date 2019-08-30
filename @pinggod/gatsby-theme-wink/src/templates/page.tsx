@@ -24,7 +24,7 @@ const Page = (props: Props): React.ReactElement => {
             description={data.site.siteMetadata.description}>
             <>
                 <PostList data={data} />
-                <div>
+                <div style={{ textAlign: 'center' }}>
                     {prevNode}
                     {nextNode}
                 </div>
