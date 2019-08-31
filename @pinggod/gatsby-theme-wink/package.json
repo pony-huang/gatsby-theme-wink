@@ -11,13 +11,13 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",
-    "gatsby-image": "^2.2.14",
+    "gatsby-image": "^2.2.15",
     "gatsby-plugin-accessibilityjs": "^1.0.3",
     "gatsby-plugin-google-analytics": "^2.1.12",
     "gatsby-plugin-mdx": "^1.0.33",
     "gatsby-plugin-netlify": "^2.1.10",
-    "gatsby-plugin-offline": "^2.2.10",
-    "gatsby-plugin-page-creator": "^2.1.12",
+    "gatsby-plugin-offline": "^3.0.0",
+    "gatsby-plugin-page-creator": "^2.1.14",
     "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-remove-trailing-slashes": "^2.1.4",
     "gatsby-plugin-sharp": "^2.2.18",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.3",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.9",
@@ -48,7 +48,7 @@
     "apollo": "^2.18.0",
     "eslint": "^6.2.2",
     "eslint-plugin-react": "^7.14.3",
-    "gatsby": "^2.14.3"
+    "gatsby": "^2.15.1"
   },
   "peerDependencies": {
     "gatsby": "^2"
