@@ -8,7 +8,7 @@ interface Props {
 }
 
 // https://remixicon.com
-export const Icon = (props: Props): JSX.Element => {
+export const Icon = (props: Props): React.ReactElement => {
     const {
         type = '',
         mode = 'line',

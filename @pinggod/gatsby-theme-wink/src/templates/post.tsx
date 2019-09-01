@@ -62,7 +62,7 @@ export default Post;
 //     }
 // `;
 
-// const PostPage = ({ pageContext, data }: Props): JSX.Element => {
+// const PostPage = ({ pageContext, data }: Props): React.ReactElement => {
 //     return (
 //         <Layout>
 //             <Wrapper>

@@ -9,7 +9,7 @@ import React from "react";
 //     height: 400px;
 // `;
 
-const AboutPage = (): JSX.Element => (
+const AboutPage = (): React.ReactElement => (
     <p>about</p>
     // <Layout>
     //     <Flex>

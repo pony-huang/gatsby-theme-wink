@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
-import Styled from "styled-components";
 import Header from "../header";
 import Footer from "../footer";
 
@@ -10,18 +9,14 @@ interface Props {
     children: React.ReactElement;
 }
 
-const ContentWrapper = Styled.div`
-    margin-top: 64px;
-`;
-
-const IndexPage = (props: Props): JSX.Element => (
+const IndexPage = (props: Props): React.ReactElement => (
     <Fragment>
         <Helmet>
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
         </Helmet>
         <Header />
-        <ContentWrapper>{props.children}</ContentWrapper>
+        {props.children}
         <Footer />
     </Fragment>
 );

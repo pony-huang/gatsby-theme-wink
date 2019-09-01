@@ -1,39 +1,24 @@
 import React from 'react';
-import Styled from 'styled-components';
 import { Wink } from '../../../typings';
 import { PostCard } from '../post-card';
-
-const Wrapper = Styled.section`
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px;
-`;
-
-const List = Styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin: 0 -48px;
-`;
+import * as S from "./index.style";
 
 interface Props {
     data: Wink.Data;
 }
 
-export const PostList = (props: Props): JSX.Element => {
+export const PostList = (props: Props): React.ReactElement => {
     const { data } = props;
 
     return (
-        <Wrapper>
-            <List>
+        <S.Wrapper>
+            <S.List>
                 {
-                    data.allMdx.edges.map((post, index: number): JSX.Element => {
+                    data.allMdx.edges.map((post, index: number): React.ReactElement => {
                         return <PostCard key={index} post={post} />
                     })
                 }
-            </List>
-        </Wrapper>
+            </S.List>
+        </S.Wrapper>
     );
 };

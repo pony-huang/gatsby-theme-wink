@@ -2,7 +2,7 @@ import React from 'react';
 import { OuterLink } from "../link";
 import * as S from "./index.style";
 
-const Header = (): JSX.Element => {
+const Header = (): React.ReactElement => {
     return (
         <S.Wrapper>
             <S.LogoSection>

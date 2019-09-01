@@ -1,5 +1,5 @@
 module.exports = ({
-    blogPath = "content/posts",
+    postPath = "content/posts",
     mdxExtensions = [".mdx", ".md"],
     ga = ""
 }) => ({
@@ -10,7 +10,7 @@ module.exports = ({
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `blog`,
-                path: blogPath
+                path: postPath,
             }
         },
         {

@@ -3,7 +3,7 @@ import { Icon } from "../Icon";
 import { OuterLink } from "../link";
 import * as S from "./index.style";
 
-const Footer = (): JSX.Element => {
+const Footer = (): React.ReactElement => {
     return (
         <S.Wrapper>
             <S.Copyright>

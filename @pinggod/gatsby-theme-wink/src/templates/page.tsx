@@ -2,7 +2,7 @@ import React from "react";
 import { Wink } from "../../typings";
 import Layout from "../components/layout";
 import { PostList } from "../components/post-list";
-import { InnerLink } from "../components/link";
+import { Pagination } from "../components/pagination";
 
 interface Context extends Wink.RootTypes {
     prevPath?: string;
@@ -15,8 +15,6 @@ interface Props {
 
 const Page = (props: Props): React.ReactElement => {
     const { data, prevPath, nextPath } = props.pageContext;
-    const prevNode = prevPath ? <InnerLink to={prevPath}>PREV</InnerLink> : null;
-    const nextNode = nextPath ? <InnerLink to={nextPath}>NEXT</InnerLink> : null;
 
     return (
         <Layout
@@ -24,10 +22,7 @@ const Page = (props: Props): React.ReactElement => {
             description={data.site.siteMetadata.description}>
             <>
                 <PostList data={data} />
-                <div style={{ textAlign: 'center' }}>
-                    {prevNode}
-                    {nextNode}
-                </div>
+                <Pagination prevPath={prevPath} nextPath={nextPath} />
             </>
         </Layout>
     );

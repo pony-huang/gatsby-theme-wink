@@ -18,11 +18,5 @@
         "skipLibCheck": true,
         "resolveJsonModule": true
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.js",
-        "typings/index.d.ts",
-        "src/components/layout/index.tsx"
-    ]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "typings/index.d.ts"]
 }

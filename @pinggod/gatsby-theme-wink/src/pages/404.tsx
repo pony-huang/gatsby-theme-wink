@@ -9,6 +9,6 @@ import React from "react";
 //     height: 400px;
 // `;
 
-const NotFoundPage = (): JSX.Element => <p>404</p>;
+const NotFoundPage = (): React.ReactElement => <p>404</p>;
 
 export default NotFoundPage;

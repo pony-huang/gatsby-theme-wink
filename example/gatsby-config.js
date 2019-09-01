@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `@pinggod/gatsby-theme-wink`,
       options: {
-        blogPath: "content/posts",
+        postPath: "content/posts",
         mdxExtensions: [".mdx", ".md"],
         ga: "UA-137858782-1"
       }
