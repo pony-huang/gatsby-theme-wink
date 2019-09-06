@@ -1,6 +1,6 @@
 import React from "react";
 import { Wink } from "../../typings";
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
 import { PostList } from "../components/post-list";
 import { Pagination } from "../components/pagination";
 
@@ -15,13 +15,15 @@ interface Props {
 
 const Page = (props: Props): React.ReactElement => {
     const { data, prevPath, nextPath } = props.pageContext;
+    // const
+    const posts = data.allMdx.edges.map((item): Wink.NodeDetail => item.node);
 
     return (
         <Layout
             title={data.site.siteMetadata.title}
             description={data.site.siteMetadata.description}>
             <>
-                <PostList data={data} />
+                <PostList posts={posts} />
                 <Pagination prevPath={prevPath} nextPath={nextPath} />
             </>
         </Layout>

@@ -4,21 +4,20 @@ import { PostCard } from '../post-card';
 import * as S from "./index.style";
 
 interface Props {
-    data: Wink.Data;
+    posts: Wink.NodeBase[];
 }
 
 export const PostList = (props: Props): React.ReactElement => {
-    const { data } = props;
+    const postNodeList = props.posts.map((
+        post: Wink.NodeBase,
+        index: number
+    ): React.ReactElement => {
+        return <PostCard key={index} post={post} />
+    });
 
     return (
         <S.Wrapper>
-            <S.List>
-                {
-                    data.allMdx.edges.map((post, index: number): React.ReactElement => {
-                        return <PostCard key={index} post={post} />
-                    })
-                }
-            </S.List>
+            <S.List>{postNodeList}</S.List>
         </S.Wrapper>
     );
 };

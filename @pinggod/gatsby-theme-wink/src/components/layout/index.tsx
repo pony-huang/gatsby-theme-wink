@@ -9,7 +9,7 @@ interface Props {
     children: React.ReactElement;
 }
 
-const IndexPage = (props: Props): React.ReactElement => (
+export const Layout = (props: Props): React.ReactElement => (
     <Fragment>
         <Helmet>
             <title>{props.title}</title>
@@ -20,5 +20,3 @@ const IndexPage = (props: Props): React.ReactElement => (
         <Footer />
     </Fragment>
 );
-
-export default IndexPage;
