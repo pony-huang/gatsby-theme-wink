@@ -3,7 +3,7 @@ import Styled from "styled-components";
 export const Wrapper = Styled.section`
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 48px auto;
 `;
 
 export const List = Styled.div`

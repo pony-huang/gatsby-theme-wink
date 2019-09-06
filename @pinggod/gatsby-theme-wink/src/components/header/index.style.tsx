@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import { InnerLink, OuterLink } from '../link';
+import { InnerLink } from '../link';
 import { Icon } from '../Icon';
 
 export const Wrapper = Styled.header`

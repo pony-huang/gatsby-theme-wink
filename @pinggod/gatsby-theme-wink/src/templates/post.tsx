@@ -3,7 +3,7 @@ import React from "react";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Wink } from "../../typings";
 import { Layout } from "../components/layout";
-import { PostCard } from "../components/post-card";
+import { PostHead } from "../components/post-head";
 import { PostList } from "../components/post-list";
 import * as S from "./post.style";
 
@@ -27,7 +27,7 @@ const Post = (props: Props): React.ReactElement => {
             title={`${post.node.frontmatter.title} · ${site.siteMetadata.title}`}
             description={post.node.frontmatter.description || site.siteMetadata.description}>
             <>
-                <PostCard post={post.node} />
+                <PostHead frontmatter={post.node.frontmatter} />
                 <S.MDXWrapper>
                     <MDXRenderer title={post.node.frontmatter.title}>
                         {post.node.body}
