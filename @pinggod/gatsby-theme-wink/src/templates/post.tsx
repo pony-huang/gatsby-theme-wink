@@ -1,11 +1,9 @@
 import React from "react";
-// @ts-ignore
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Wink } from "../../typings";
 import { Layout } from "../components/layout";
 import { PostHead } from "../components/post-head";
 import { PostList } from "../components/post-list";
-import * as S from "./post.style";
+import { MDX } from "../components/mdx";
 
 interface Props {
     pageContext: {
@@ -28,11 +26,7 @@ const Post = (props: Props): React.ReactElement => {
             description={post.node.frontmatter.description || site.siteMetadata.description}>
             <>
                 <PostHead frontmatter={post.node.frontmatter} />
-                <S.MDXWrapper>
-                    <MDXRenderer title={post.node.frontmatter.title}>
-                        {post.node.body}
-                    </MDXRenderer>
-                </S.MDXWrapper>
+                <MDX post={post.node} />
                 <PostList posts={siblingPosts} />
             </>
         </Layout>

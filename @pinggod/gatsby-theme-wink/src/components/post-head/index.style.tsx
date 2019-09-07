@@ -24,6 +24,7 @@ export const Wrapper = Styled.header`
 export const Title = Styled.h1`
     font-size: 32px;
     font-weight: 700;
+    line-height: 1.4;
 `;
 
 export const SubTitle = Styled.h2`

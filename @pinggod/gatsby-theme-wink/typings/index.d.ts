@@ -1,6 +1,7 @@
-import { FluidObject } from "gatsby-image";
+import { FluidObject } from 'gatsby-image';
 
-declare module "gatsby-plugin-mdx";
+declare module '@mdx-js/react';
+declare module 'gatsby-plugin-mdx';
 
 declare namespace Wink {
     export interface RootTypes {
