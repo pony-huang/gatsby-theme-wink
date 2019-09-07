@@ -23,6 +23,84 @@ export const Wrapper = Styled.div`
     }
 `;
 
+export const Code = Styled.code`
+    padding: 4px 8px;
+    background: rgb(239, 243, 245);
+    border-radius: 4px;
+    font-weight: 500;
+`;
+
+export const Pre = Styled.pre`
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 4px;
+    line-height: 2;
+    overflow-x: scroll;
+
+    ${Code} {
+        padding: 0;
+        background: transparent;
+
+        .token.punctuation {
+            color: #525252;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: #b3b3b3;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+            color: rgb(134, 179, 0);
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.url,
+        .token.inserted {
+            color: #42b983;
+        }
+
+        .token.entity {
+            color: #657b83;
+            background: #eee8d5; /* base2 */
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+             color: #BA4545;
+        }
+
+        .token.operator {
+            color: rgb(0, 119, 170);
+        }
+
+        .token.function,
+        .token.class-name {
+            color: #b58900;
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+            color: rgb(238, 153, 0);
+        }
+    }
+`;
+
+
 export const P = Styled.p`
     margin: 16px 0;
     font-size: 16px;
@@ -107,19 +185,6 @@ export const Td = Styled.td`
     border-top: 1px solid rgb(204, 217, 223);
     color: rgb(58, 73, 80);
     font-weight: 300;
-`;
-
-export const Code = Styled.code`
-    padding: 4px 8px;
-    background: rgb(239, 243, 245);
-    border-radius: 4px;
-    font-weight: 500;
-`;
-
-export const Pre = Styled.pre`
-    ${Code} {
-        background: transparent;
-    }
 `;
 
 export const Em = Styled.em``;

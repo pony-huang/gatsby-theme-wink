@@ -1,7 +1,7 @@
 ---
 title: CSS 文字排版常用属性 Tmux
 description: 介绍 white-spacing / word-wrap / word-break 的使用方法
-date: '2019-03-17T03:45:03.995Z'
+date: "2019-03-17T03:45:03.995Z"
 published: true
 cover: ./marvin-meyer-794521-unsplash.jpg
 coverAuthor: Marvin Meyer
@@ -16,31 +16,32 @@ coverOriginalUrl: https://unsplash.com/photos/VvKdB1FYNZs?utm_source=unsplash&ut
 
 ---
 
-```js{1,4-6}
-import Ember from 'ember';
+```js
+{/* highlight-range{1,4-6} */}
+import Ember from "ember";
 
 var { set } = Ember;
 
 export default Ember.Component.extend({
-  classNames: ['draggableDropzone'],
-  classNameBindings: ['dragClass'],
-  dragClass: 'deactivated',
+  classNames: ["draggableDropzone"],
+  classNameBindings: ["dragClass"],
+  dragClass: "deactivated",
 
   dragLeave(event) {
     event.preventDefault();
-    set(this, 'dragClass', 'deactivated');
+    set(this, "dragClass", "deactivated");
   },
 
   dragOver(event) {
     event.preventDefault();
-    set(this, 'dragClass', 'activated');
+    set(this, "dragClass", "activated");
   },
 
   drop(event) {
-    var data = event.dataTransfer.getData('text/data');
-    this.sendAction('dropped', data);
+    var data = event.dataTransfer.getData("text/data");
+    this.sendAction("dropped", data);
 
-    set(this, 'dragClass', 'deactivated');
+    set(this, "dragClass", "deactivated");
   }
 });
 ```

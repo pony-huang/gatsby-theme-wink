@@ -12,6 +12,7 @@ const mdxPlugins = [
     {
         resolve: `gatsby-remark-prismjs`,
         options: {
+            showLineNumbers: true,
             aliases: {
                 sh: "shell",
                 env: "bash",
