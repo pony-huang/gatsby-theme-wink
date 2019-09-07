@@ -1,22 +1,36 @@
 ---
-title: "中文Migrating from Medium to Gatsby"
-description: >-
-  I recently moved my 中文 blog from Medium to a self-managed blog built with Gatsby, then deployed on Netlify.
-date: "2019-03-17T03:45:03.995Z"
-categories:
-  - engineering
-keywords:
-  - medium
-  - gatsby
-  - automation
-  - lighthouse
-  - bors
-  - delete-merged-branch
+title: CSS 文字排版常用属性
+description: 介绍 white-spacing / word-wrap / word-break 的使用方法
+date: '2019-03-17T03:45:03.995Z'
 published: true
 cover: ./marvin-meyer-794521-unsplash.jpg
 coverAuthor: Marvin Meyer
 coverOriginalUrl: https://unsplash.com/photos/VvKdB1FYNZs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
+
+从某种意义上说，网页是印刷的电子化产品，也离不开排版布局等设计工作，网页中的文字排版问题常见于中英文混排时的对齐问题。
+
+## 间距
+
+使用 CSS 控制文字间距是比较简单的一件事，下面属性可以从微观到宏观的调整文字间距：
+
+- `letter-spacing`，调整字与字之间的间距，对于英文来说就是字母之间的间距，对于中文来说就是每个汉字之间的间距
+- `word-spacing`，调整‘单词’与‘单词’之间的间距，无论中英文，这里的单词是指被半角空白符包围的独立字块，比如 `使用 CSS 控制...` 中的 `CSS` 就是一个字块，但是 `使用CSS控制...` 中就没有字块
+- `line-height`，调整行与行之间的间距
+
+上面三个属性控制了从字母到行之间的间距，如果要调整更大范围的间距，则可以使用 `margin`、`padding` 属性实现。
+
+## 换行
+
+默认情况下，浏览器有一套自己的算法对长文字进行自动换行，但是对于中英文混排或类似 URL 地址的长文字，自动换行的效果不尽人意。首先，我们从最强势的 `white-space` 讲起。`white-space` 主要有两点功能：决定是否对文本中的空白符进行合并，决定哪种情况下进行换行。其属性值也主要包含两类，一类是合并换行符和空白符的 `normal`、`nowrap`，一类是不合并换行符的 `pre`、`pre-wrap` 和 `pre-line`。
+
+`normal` 和 `nowrap` 的共同点就是会对换行符、制表符、空格等符号毫不留情地合并，最终只保留一个半角空格，其中 `normal` 是浏览器默认使用的处理方式，其与 `nowrap` 的区别在于，`nowrap` 绝不换行，而 `normal` 会在溢出时自动换行，但是换行效果不佳。
+
+`pre`、`pre-wrap` 和 `pre-line` 的共同点是保留换行符，三者之间的差异还是比较大的：
+
+- `pre`，保留空白符但绝不自动换行，只根据换行符进行换行，溢出也不换行
+- `pre-wrap`，保留空白符，溢出自动换行
+- `pre-line`，合并空白符，移出自动换行
 
 I recently moved my blog from [Medium](https://medium.com/@sugarpirate) to a self-managed blog built with [Gatsby](https://www.gatsbyjs.org/) in the [open](https://github.com/poteto/no.lol), then deployed on [Netlify](https://www.netlify.com/). After a few weeks of fiddling around, I feel like I've landed on something I'm mostly happy with.
 
@@ -36,10 +50,10 @@ After some googling, I found [medium-2-md](https://github.com/gautamdhameja/medi
 
 ```markdown
 ---
-title: "My blog post"
+title: 'My blog post'
 description: >-
   This is a description of my awesome blog post
-date: "2019-03-17T00:52:08.562Z"
+date: '2019-03-17T00:52:08.562Z'
 categories:
   - stuff n things
 keywords:
@@ -67,7 +81,7 @@ If you want to convert your drafts as well, add the `-d` flag to the command. Wh
 
 Now that we have our posts, we can get our blog going! I started by throwing something together in Sketch, as I found it helpful for me to think about different ideas I wanted to try in the design of my blog. Here's what I originally came up with (quite different from what I actually built!):
 
-![My original design for my blog](./v1.png "My original design for my blog")
+![My original design for my blog](./v1.png 'My original design for my blog')
 
 #### Setting up
 
