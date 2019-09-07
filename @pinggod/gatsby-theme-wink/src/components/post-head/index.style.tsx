@@ -3,7 +3,8 @@ import Image from 'gatsby-image';
 
 export const Main = Styled.div`
     margin: 48px auto;
-    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
 `;
 
 export const Wrapper = Styled.header`

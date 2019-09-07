@@ -13,7 +13,9 @@ export const Icon = (props: Props): React.ReactElement => {
         type = '',
         mode = 'line',
         className = '',
-        style = {},
+        style = {
+            color: '#3C3F45',
+        },
     } = props;
 
     return (

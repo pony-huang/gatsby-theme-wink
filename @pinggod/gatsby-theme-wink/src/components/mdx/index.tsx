@@ -1,23 +1,9 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import ImageWithZoom from "react-medium-image-zoom";
 import * as S from "./index.style";
 import { OuterLink } from "../link";
-
-interface ImageProps {
-    alt: string;
-    className: string;
-    loading: string;
-    src: string;
-    title: string;
-}
-
-const Image = (props: ImageProps): React.ReactElement => {
-    return (
-        <ImageWithZoom image={props} zoomImage={props} />
-    );
-}
+import { Image } from "./image";
 
 interface Props {
     post: Wink.NodeDetail;
@@ -32,7 +18,6 @@ const components = {
     h4: S.H4,
     h5: S.H5,
     h6: S.H6,
-    thematicBreak: S.ThematicBreak,
     blockquote: S.Bloackquote,
     ul: S.Ul,
     ol: S.Ol,
@@ -45,10 +30,10 @@ const components = {
     code: S.Code,
     em: S.Em,
     strong: S.Strong,
-    delete: S.Delete,
     hr: S.Hr,
     a: OuterLink,
     img: Image,
+    del: S.Delete,
 }
 
 export const MDX = (props: Props): React.ReactElement => {

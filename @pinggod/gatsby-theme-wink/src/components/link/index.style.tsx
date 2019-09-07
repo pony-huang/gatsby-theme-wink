@@ -5,15 +5,11 @@ export const OuterLink = Styled.a.attrs({
     target: "_blank",
     rel: "noopener noreferrer"
 })`
-    color: black;
+    color: rgb(15, 122, 216);
 `;
 
 export const InnerLink = Styled(Link)`
-    color: black;
+    color: #3C3F45;
     cursor: pointer;
     text-decoration: none;
-
-    &:hover {
-        /* text-decoration: underline; */
-    }
 `;

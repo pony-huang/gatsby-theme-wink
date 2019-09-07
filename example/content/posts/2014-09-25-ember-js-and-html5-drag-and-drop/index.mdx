@@ -35,15 +35,11 @@ Code: [JSBin demo](http://jsbin.com/denep/9/edit?js,output)
 Let’s first define our `draggable-dropzone` component:
 
 ```js{1,4-6}
-{
-  /* highlight-range{1,4-9,12} */
-}
 import Ember from 'ember';
 
 var { set } = Ember;
 
 export default Ember.Component.extend({
-  // highlight-line
   classNames: ['draggableDropzone'],
   classNameBindings: ['dragClass'],
   dragClass: 'deactivated',

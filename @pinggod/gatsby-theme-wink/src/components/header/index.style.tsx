@@ -36,6 +36,7 @@ export const SearchIcon = Styled(Icon).attrs({
 })`
     margin-right: -16px;
     padding: 0 16px;
+    color: #3C3F45;
     font-size: 18px;
     font-weight: 900;
     cursor: pointer;

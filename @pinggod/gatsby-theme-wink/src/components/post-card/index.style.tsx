@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 export const Main = Styled.div`
     padding-top: 16px;
     hyphens: auto;
-    word-break: break-all;
+    hyphens: auto;
 `;
 
 export const Title = Styled.h2`
