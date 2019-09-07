@@ -19,8 +19,8 @@ It’s fairly trivial to add a ‘drag and drop’ interface to Ember.js with [h
 
 The basic premise is to create 2 components:
 
-*   a `draggable-dropzone` component, that handles when an item is dropped into it (e.g. a shopping cart)
-*   a `draggable-item` component, that sets up the data transfer into the dropzone
+- a `draggable-dropzone` component, that handles when an item is dropped into it (e.g. a shopping cart)
+- a `draggable-item` component, that sets up the data transfer into the dropzone
 
 Using [transclusion](http://en.wikipedia.org/wiki/Transclusion), we can then easily add our ‘drag and drop’ functionality into our Ember application with different UI.
 
@@ -34,15 +34,19 @@ Code: [JSBin demo](http://jsbin.com/denep/9/edit?js,output)
 
 Let’s first define our `draggable-dropzone` component:
 
-```js
+```js{1,4-6}
+{
+  /* highlight-range{1,4-9,12} */
+}
 import Ember from 'ember';
 
 var { set } = Ember;
 
 export default Ember.Component.extend({
-  classNames        : [ 'draggableDropzone' ],
-  classNameBindings : [ 'dragClass' ],
-  dragClass         : 'deactivated',
+  // highlight-line
+  classNames: ['draggableDropzone'],
+  classNameBindings: ['dragClass'],
+  dragClass: 'deactivated',
 
   dragLeave(event) {
     event.preventDefault();
@@ -79,9 +83,9 @@ import Ember from 'ember';
 var { get } = Ember;
 
 export default Ember.Component.extend({
-  classNames        : [ 'draggableItem' ],
-  attributeBindings : [ 'draggable' ],
-  draggable         : 'true',
+  classNames: ['draggableItem'],
+  attributeBindings: ['draggable'],
+  draggable: 'true',
 
   dragStart(event) {
     return event.dataTransfer.setData('text/data', get(this, 'content'));
@@ -138,14 +142,14 @@ import Ember from 'ember';
 var { computed, get } = Ember;
 
 export default Ember.ArrayController.extend({
-  selectedUsers        : Ember.A([]),
-  remainingUsers       : computed.setDiff('model', 'selectedUsers'),
-  remainingUsersLength : computed.alias('remainingUsers.length'),
+  selectedUsers: Ember.A([]),
+  remainingUsers: computed.setDiff('model', 'selectedUsers'),
+  remainingUsersLength: computed.alias('remainingUsers.length'),
 
   actions: {
     addUser(userId) {
       var selectedUsers = get(this, 'selectedUsers');
-      var user          = get(this, 'model').findBy('id', parseInt(userId));
+      var user = get(this, 'model').findBy('id', parseInt(userId));
 
       if (!selectedUsers.contains(user)) {
         return selectedUsers.pushObject(user);
@@ -153,7 +157,7 @@ export default Ember.ArrayController.extend({
     },
 
     addAllUsers() {
-      var remainingUsers = get(this, 'remainingUsers')
+      var remainingUsers = get(this, 'remainingUsers');
       return get(this, 'selectedUsers').pushObjects(remainingUsers);
     },
 
@@ -173,42 +177,42 @@ In our Controller, we simply find the appropriate user record from the store (us
 Some basic styling:
 
 ```scss
-$default-margin : 20px;
-$gray-light     : #e1e1e1;
-$gray-medium    : #aaa;
-$green          : #2ecc71;
-$white          : #fff;
-$black          : #111;
+$default-margin: 20px;
+$gray-light: #e1e1e1;
+$gray-medium: #aaa;
+$green: #2ecc71;
+$white: #fff;
+$black: #111;
 
 .draggableDropzone {
-   display: block;
-   border: 3px dashed $gray-medium;
-   padding: $default-margin / 2;
-   width: 100%;
-   min-height: $default-margin * 2.5;
-   color: $gray-medium;
-   margin-bottom: $default-margin / 2;
-   &.activated {
-     border-color: $green;
-   }
-   &.deactivated {
-     border-color: $gray-light;
-   }
+  display: block;
+  border: 3px dashed $gray-medium;
+  padding: $default-margin / 2;
+  width: 100%;
+  min-height: $default-margin * 2.5;
+  color: $gray-medium;
+  margin-bottom: $default-margin / 2;
+  &.activated {
+    border-color: $green;
+  }
+  &.deactivated {
+    border-color: $gray-light;
+  }
 }
 
-.draggableItem[draggable=true] {
-   display: inline-block;
-   min-width: $default-margin;
-   min-height: $default-margin;
-   background: $gray-light;
-   padding: $default-margin / 4 $default-margin / 2;
-   margin: $default-margin / 4;
-   -moz-user-select: none;
-   -khtml-user-drag: element;
-   cursor: move;
-   &:hover {
-     background-color: $gray-medium;
-   }
+.draggableItem[draggable='true'] {
+  display: inline-block;
+  min-width: $default-margin;
+  min-height: $default-margin;
+  background: $gray-light;
+  padding: $default-margin / 4 $default-margin / 2;
+  margin: $default-margin / 4;
+  -moz-user-select: none;
+  -khtml-user-drag: element;
+  cursor: move;
+  &:hover {
+    background-color: $gray-medium;
+  }
 }
 ```
 

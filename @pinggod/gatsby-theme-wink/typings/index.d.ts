@@ -1,9 +1,6 @@
 declare module '@mdx-js/react';
 declare module 'gatsby-plugin-mdx';
-
-// declare Global {
-
-// }
+declare module 'react-medium-image-zoom';
 
 declare namespace Wink {
     export interface RootTypes {

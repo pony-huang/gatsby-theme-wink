@@ -4,10 +4,9 @@ const mdxPlugins = [
         resolve: `gatsby-remark-images`,
         options: {
             maxWidth: 1200,
-            backgroundColor: `white`,
-            withWebp: true,
-            showCaptions: true,
+            linkImagesToOriginal: false,
             quality: 80,
+            withWebp: true,
         },
     },
     {
@@ -32,6 +31,7 @@ module.exports = ({
         `gatsby-plugin-sharp`,
         `gatsby-plugin-typescript`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-transformer-remark`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -51,14 +51,6 @@ module.exports = ({
                 extensions: mdxExtensions,
                 plugins: mdxPlugins,
                 gatsbyRemarkPlugins: mdxPlugins,
-                // remarkPlugins: [
-                //     require('remark-math'),
-                // ],
-                // rehypePlugins: [
-                //     require('rehype-katex'),
-                //     require('rehype-slug'),
-                //     require('@agentofuser/rehype-section'),
-                // ],
             }
         },
         {
