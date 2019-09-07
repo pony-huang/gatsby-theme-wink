@@ -35,9 +35,7 @@ module.exports = ({
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-remove-trailing-slashes`,
-        `gatsby-plugin-accessibilityjs`,
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-offline`,
-        `gatsby-plugin-netlify`
     ]
 });

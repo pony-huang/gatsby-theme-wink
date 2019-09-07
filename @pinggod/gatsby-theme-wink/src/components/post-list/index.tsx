@@ -1,5 +1,4 @@
 import React from 'react';
-import { Wink } from '../../../typings';
 import { PostCard } from '../post-card';
 import * as S from "./index.style";
 

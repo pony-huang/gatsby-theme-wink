@@ -1,5 +1,4 @@
 import React from "react";
-import { Wink } from "../../typings";
 import { Layout } from "../components/layout";
 import { PostHead } from "../components/post-head";
 import { PostList } from "../components/post-list";

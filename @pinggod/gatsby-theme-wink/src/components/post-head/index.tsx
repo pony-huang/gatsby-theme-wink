@@ -1,5 +1,4 @@
 import React from 'react';
-import { Wink } from '../../../typings';
 import * as S from "./index.style";
 import { OuterLink } from '../link';
 

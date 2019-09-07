@@ -1,9 +1,6 @@
 import React from "react";
-// @ts-ignore
 import { MDXProvider } from "@mdx-js/react";
-// @ts-ignore
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Wink } from "../../../typings";
 import * as S from "./index.style";
 
 interface Props {
