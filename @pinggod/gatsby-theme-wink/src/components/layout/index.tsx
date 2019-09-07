@@ -12,8 +12,15 @@ interface Props {
 export const Layout = (props: Props): React.ReactElement => (
     <Fragment>
         <Helmet>
+            <meta charSet="utf-8" />
+            <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
+            <link rel="shortcut icon" href="/favicon.ico" />
         </Helmet>
         <Header />
         {props.children}

@@ -1,6 +1,10 @@
 declare module '@mdx-js/react';
 declare module 'gatsby-plugin-mdx';
 
+// declare Global {
+
+// }
+
 declare namespace Wink {
     export interface RootTypes {
         data: Data;

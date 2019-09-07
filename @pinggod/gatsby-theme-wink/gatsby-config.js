@@ -1,4 +1,5 @@
 const mdxPlugins = [
+    `gatsby-remark-slug`,
     {
         resolve: `gatsby-remark-images`,
         options: {
@@ -19,14 +20,6 @@ const mdxPlugins = [
             },
         },
     },
-    `gatsby-remark-copy-linked-files`,
-    {
-        resolve: 'gatsby-remark-external-links',
-        options: {
-            target: '_blank',
-            rel: 'noopener noreferrer',
-        },
-    }
 ];
 
 module.exports = ({
@@ -58,6 +51,14 @@ module.exports = ({
                 extensions: mdxExtensions,
                 plugins: mdxPlugins,
                 gatsbyRemarkPlugins: mdxPlugins,
+                // remarkPlugins: [
+                //     require('remark-math'),
+                // ],
+                // rehypePlugins: [
+                //     require('rehype-katex'),
+                //     require('rehype-slug'),
+                //     require('@agentofuser/rehype-section'),
+                // ],
             }
         },
         {
