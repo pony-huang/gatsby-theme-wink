@@ -1,5 +1,6 @@
-/* eslint-disable */
+/* eslint-disable-next-line */
 const path = require("path");
+/* eslint-disable-next-line */
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
