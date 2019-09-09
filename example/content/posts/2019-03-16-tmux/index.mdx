@@ -8,7 +8,7 @@ coverAuthor: Marvin Meyer
 coverOriginalUrl: https://unsplash.com/photos/VvKdB1FYNZs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 
-## 中文
+## 中文 哈哈
 
 从**某种意义**上说，网页是印刷的*电子化产品*，也离不开排版布局等设计工作，网页中的文字排版问题~~常见于中英文混排~~时的对齐问题。
 
@@ -132,7 +132,7 @@ Getting your blog deployed with [Netlify](https://netlify.com) is a breeze. Once
 3. Add the API key as an environment variable to TravisCI
 4. Then run it against your Netlify deploy preview so you can look at score changes before merging your PR
 
-```yaml:title=.travis.yml
+```yaml
 jobs:
   include:
     - stage: Test
@@ -144,7 +144,7 @@ jobs:
       script: yarn run lh --perf 90 --pwa 90 --a11y 90 --bp 90 --seo 90 "$(wait-for-netlify-preview)"
 ```
 
-```json:title=package.json
+```json
 {
   "scripts": {
     "lh": "lighthousebot"

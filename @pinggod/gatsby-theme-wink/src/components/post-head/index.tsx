@@ -3,26 +3,26 @@ import * as S from "./index.style";
 import { OuterLink } from '../link';
 
 interface Props {
-    frontmatter: Wink.Frontmatter;
+    post: Wink.NodeDetail;
 }
 
 export const PostHead = (props: Props): React.ReactElement => {
-    const { frontmatter } = props;
+    const { post } = props;
 
     return (
         <S.Wrapper>
             <S.Main>
-                <S.PostTime>{frontmatter.date}</S.PostTime>
+                <S.PostTime>{post.file.birthTime}</S.PostTime>
                 <section>
-                    <S.Title>{frontmatter.title}</S.Title>
-                    <S.SubTitle>{frontmatter.description}</S.SubTitle>
+                    <S.Title>{post.frontmatter.title}</S.Title>
+                    <S.SubTitle>{post.frontmatter.description}</S.SubTitle>
                 </section>
             </S.Main>
             <S.CoverWrapper>
-                <S.CoverImage fluid={frontmatter.cover.childImageSharp.fluid} />
+                <S.CoverImage fluid={post.frontmatter.cover.childImageSharp.fluid} />
                 <S.CoverMeta>
                     <span>photo by &nbsp;</span>
-                    <OuterLink href={frontmatter.coverOriginalUrl}>{frontmatter.coverAuthor}</OuterLink>
+                    <OuterLink href={post.frontmatter.coverOriginalUrl}>{post.frontmatter.coverAuthor}</OuterLink>
                     <span>&nbsp;on unsplash.com</span>
                 </S.CoverMeta>
             </S.CoverWrapper>

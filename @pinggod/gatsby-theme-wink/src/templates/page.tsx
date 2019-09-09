@@ -1,21 +1,22 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { PostList } from "../components/post-list";
 import { Pagination } from "../components/pagination";
 
-interface Context extends Wink.RootTypes {
-    prevPath?: string;
-    nextPath?: string;
-}
-
 interface Props {
-    pageContext: Context;
+    data: Wink.PostsData;
+    pageContext: {
+        ids: string[];
+        prevPath: string;
+        nextPath: string;
+    };
 }
 
-const Page = (props: Props): React.ReactElement => {
-    const { data, prevPath, nextPath } = props.pageContext;
-    // const
-    const posts = data.allMdx.edges.map((item): Wink.NodeDetail => item.node);
+export default function Page(props: Props): React.ReactElement {
+    const { data } = props;
+    const { prevPath, nextPath } = props.pageContext;
+    const posts = data.allMdx.edges.map((item): Wink.NodeBase => item.node);
 
     return (
         <Layout
@@ -27,6 +28,73 @@ const Page = (props: Props): React.ReactElement => {
             </>
         </Layout>
     );
-};
+}
 
-export default Page;
+export const query = graphql`
+    fragment Cover on File {
+        childImageSharp {
+            fluid(maxWidth: 1200) {
+                base64
+                tracedSVG
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+                originalImg
+                originalName
+                presentationWidth
+                presentationHeight
+            }
+        }
+    }
+
+    fragment NodeOverview on Mdx {
+        id
+        fields {
+            slug
+        }
+        frontmatter {
+            title
+            description
+            coverAuthor
+            coverOriginalUrl
+            cover {
+                ...Cover
+            }
+        }
+        file: parent {
+            ... on File {
+                modifiedTime(formatString: "MMM DD, YYYY")
+                publicURL
+                birthTime(formatString: "MMM DD, YYYY")
+            }
+        }
+        timeToRead
+        wordCount {
+            paragraphs
+            sentences
+            words
+        }
+    }
+
+    query posts($ids: [String]) {
+        site {
+            siteMetadata {
+                title
+                description
+                siteUrl
+            }
+            buildTime
+        }
+        allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: {id: {in: $ids}}) {
+            totalCount
+            edges {
+                node {
+                    ...NodeOverview
+                }
+            }
+        }
+    }
+`;

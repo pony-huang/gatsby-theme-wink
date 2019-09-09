@@ -3,11 +3,14 @@ declare module 'gatsby-plugin-mdx';
 declare module 'react-medium-image-zoom';
 
 declare namespace Wink {
-    export interface RootTypes {
-        data: Data;
+    export interface PostData {
+        site: Site;
+        node: NodeDetail;
+        prevNode: NodeBase;
+        nextNode: NodeBase;
     }
 
-    export interface Data {
+    export interface PostsData {
         site: Site;
         allMdx: AllMdx;
     }
@@ -29,21 +32,19 @@ declare namespace Wink {
     }
 
     export interface Edge {
-        previous?: NodeBase;
-        node: NodeDetail;
-        next?: NodeBase;
+        node: NodeBase;
     }
 
     export interface NodeBase {
         id: string;
         fields: Fields;
         frontmatter: Frontmatter;
+        file: File;
         timeToRead: number;
         wordCount: WordCount;
     }
 
     export interface NodeDetail extends NodeBase {
-        internal: Internal;
         tableOfContents: TableOfContents;
         body: string;
     }
@@ -52,24 +53,24 @@ declare namespace Wink {
         slug: string;
     }
 
-    export interface Internal {
-        type: string;
-        contentDigest: string;
-    }
-
     export interface Frontmatter {
         title: string;
-        date: Date;
         description: string;
+        cover: Cover;
         coverAuthor: string;
         coverOriginalUrl: string;
-        cover: Cover;
     }
 
     export interface Cover {
         childImageSharp: {
             fluid: any;
         };
+    }
+
+    export interface File {
+        publicURL: string;
+        birthTime: string;
+        modifiedTime: string;
     }
 
     export interface TableOfContents {

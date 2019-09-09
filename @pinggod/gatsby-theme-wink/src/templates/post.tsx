@@ -1,35 +1,51 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { Layout } from "../components/layout";
 import { PostHead } from "../components/post-head";
 import { PostList } from "../components/post-list";
 import { MDX } from "../components/mdx";
 
 interface Props {
-    pageContext: {
-        site: Wink.Site;
-        post: Wink.Edge;
-        totalCount: number;
-    };
+    data: Wink.PostData;
 }
 
-const Post = (props: Props): React.ReactElement => {
-    const { site, post } = props.pageContext;
-    const siblingPosts = [];
-
-    post.previous && siblingPosts.push(post.previous);
-    post.next && siblingPosts.push(post.next);
+export default function Post(props: Props): React.ReactElement {
+    const { data } = props;
+    const siblingPosts = [data.prevNode, data.nextNode];
 
     return (
         <Layout
-            title={`${post.node.frontmatter.title} · ${site.siteMetadata.title}`}
-            description={post.node.frontmatter.description || site.siteMetadata.description}>
+            title={`${data.node.frontmatter.title} · ${data.site.siteMetadata.title} `}
+            description={data.node.frontmatter.description || data.site.siteMetadata.description}>
             <>
-                <PostHead frontmatter={post.node.frontmatter} />
-                <MDX post={post.node} />
+                <PostHead post={data.node} />
+                <MDX post={data.node} />
                 <PostList posts={siblingPosts} />
             </>
         </Layout>
     );
-};
+}
 
-export default Post;
+export const query = graphql`
+    query Post($id: String!, $prevId: String!, $nextId: String!) {
+        site {
+            siteMetadata {
+                title
+                description
+                siteUrl
+            }
+            buildTime
+        }
+        node: mdx(id: {eq: $id}) {
+            ...NodeOverview
+            tableOfContents
+            body
+        }
+        prevNode: mdx(id: {eq: $prevId}) {
+            ...NodeOverview
+        }
+        nextNode: mdx(id: {eq: $nextId}) {
+            ...NodeOverview
+        }
+    }
+`;
