@@ -198,16 +198,14 @@ export const Th = Styled.th`
     text-align: left;
     font-size: 14px;
     font-weight: 600;
-    color: rgb(58, 73, 80);
     text-transform: uppercase;
-    padding: 12px 24px;
+    padding: 8px 16px;
 `;
 
 export const Td = Styled.td`
     text-align: left;
-    padding: 16px 24px;
+    padding: 8px 16px;
     border-top: 1px solid rgb(204, 217, 223);
-    color: rgb(58, 73, 80);
     font-weight: 300;
 `;
 
