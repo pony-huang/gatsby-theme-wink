@@ -14,6 +14,11 @@ export const Wrapper = Styled.div`
         font-weight: bold;
     }
 
+    pre, code {
+        font-size: 14px;
+        font-family: 'Roboto Mono', Monaco, courier, monospace;
+    }
+
     .gatsby-resp-image-wrapper {
         margin: 16px 0 !important;
 
@@ -23,79 +28,97 @@ export const Wrapper = Styled.div`
     }
 `;
 
-export const Code = Styled.code`
-    padding: 4px 8px;
-    background: rgb(239, 243, 245);
+export const InlineCode = Styled.code`
+    margin: 0 4px;
+    padding: 2px 8px;
     border-radius: 4px;
-    font-weight: 500;
+    background: rgb(239, 243, 245);
 `;
 
 export const Pre = Styled.pre`
     margin: 16px 0;
-    padding: 16px;
+    padding: 24px;
     border-radius: 4px;
     line-height: 2;
     overflow-x: scroll;
+    background: #F8F8F8;
 
-    ${Code} {
-        padding: 0;
-        background: transparent;
+    code {
+        color: #525252;
 
-        .token.punctuation {
-            color: #525252;
+        .hljs-function .hljs-keyword,
+        .hljs-constant {
+            color: #0092db;
         }
-
-        .token.comment,
-        .token.prolog,
-        .token.doctype,
-        .token.cdata {
-            color: #b3b3b3;
+        .hljs-keyword,
+        .hljs-attribute,
+        .hljs-attr {
+            color: #e96900;
         }
-
-        .token.property,
-        .token.tag,
-        .token.boolean,
-        .token.number,
-        .token.constant,
-        .token.symbol,
-        .token.deleted {
-            color: rgb(134, 179, 0);
+        .hljs-number,
+        .hljs-literal {
+            color: #ae81ff;
         }
-
-        .token.selector,
-        .token.attr-name,
-        .token.string,
-        .token.char,
-        .token.builtin,
-        .token.url,
-        .token.inserted {
+        .hljs-tag,
+        .hljs-tag .hljs-title,
+        .hljs-change,
+        .hljs-winutils,
+        .hljs-flow,
+        .hljs-lisp .hljs-title,
+        .hljs-clojure .hljs-built_in,
+        .hljs-nginx .hljs-title,
+        .hljs-tex .hljs-special,
+        .hljs-bullet {
+            color: #2973b7;
+        }
+        .hljs-symbol,
+        .hljs-symbol .hljs-string,
+        .hljs-value,
+        .hljs-regexp {
             color: #42b983;
         }
-
-        .token.entity {
-            color: #657b83;
-            background: #eee8d5; /* base2 */
+        .hljs-title {
+            color: #83B917;
         }
-
-        .token.atrule,
-        .token.attr-value,
-        .token.keyword {
-             color: #BA4545;
+        .hljs-tag .hljs-value,
+        .hljs-string,
+        .hljs-subst,
+        .hljs-haskell .hljs-type,
+        .hljs-preprocessor,
+        .hljs-ruby .hljs-class .hljs-parent,
+        .hljs-built_in,
+        .hljs-sql .hljs-aggregate,
+        .hljs-django .hljs-template_tag,
+        .hljs-django .hljs-variable,
+        .hljs-smalltalk .hljs-class,
+        .hljs-javadoc,
+        .hljs-django .hljs-filter .hljs-argument,
+        .hljs-smalltalk .hljs-localvars,
+        .hljs-smalltalk .hljs-array,
+        .hljs-attr_selector,
+        .hljs-pseudo,
+        .hljs-addition,
+        .hljs-stream,
+        .hljs-envvar,
+        .hljs-apache .hljs-tag,
+        .hljs-apache .hljs-cbracket,
+        .hljs-tex .hljs-command,
+        .hljs-prompt {
+            color: #42b983;
         }
-
-        .token.operator {
-            color: rgb(0, 119, 170);
+        .hljs-comment,
+        .hljs-java .hljs-annotation,
+        .hljs-python .hljs-decorator,
+        .hljs-template_comment,
+        .hljs-pi,
+        .hljs-doctype,
+        .hljs-shebang,
+        .hljs-apache .hljs-sqbracket,
+        .hljs-tex .hljs-formula {
+            color: #b3b3b3;
         }
-
-        .token.function,
-        .token.class-name {
-            color: #b58900;
-        }
-
-        .token.regex,
-        .token.important,
-        .token.variable {
-            color: rgb(238, 153, 0);
+        .hljs-deletion {
+            color: #BA4545;
         }
     }
 `;

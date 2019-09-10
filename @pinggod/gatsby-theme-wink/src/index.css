@@ -66,13 +66,6 @@ p {
     padding: 0;
 }
 
-code,
-pre {
-    font-size: 0.8em;
-    background-color: #f8f8f8;
-    font-family: 'Roboto Mono', Monaco, courier, monospace;
-}
-
 a {
     text-decoration: none;
 }

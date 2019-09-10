@@ -12,6 +12,7 @@ export default function HTML(props: any): React.ReactElement {
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
                 <link rel="shortcut icon" href="/favicon.ico" />
+                <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
                 {props.headComponents}
             </head>
             <body {...props.bodyAttributes}>

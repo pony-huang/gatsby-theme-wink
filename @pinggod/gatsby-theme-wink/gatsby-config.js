@@ -1,5 +1,10 @@
+const mdPlugins = [
+    require("remark-slug"),
+    require("remark-highlight.js"),
+];
+
 const mdxPlugins = [
-    `gatsby-remark-slug`,
+    // `gatsby-remark-slug`,
     {
         resolve: `gatsby-remark-images`,
         options: {
@@ -7,17 +12,6 @@ const mdxPlugins = [
             linkImagesToOriginal: false,
             quality: 80,
             withWebp: true,
-        },
-    },
-    {
-        resolve: `gatsby-remark-prismjs`,
-        options: {
-            showLineNumbers: true,
-            aliases: {
-                sh: "shell",
-                env: "bash",
-                mdx: "md",
-            },
         },
     },
 ];
@@ -32,7 +26,6 @@ module.exports = ({
         `gatsby-plugin-sharp`,
         `gatsby-plugin-typescript`,
         `gatsby-plugin-react-helmet`,
-        `gatsby-transformer-remark`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -51,6 +44,7 @@ module.exports = ({
             options: {
                 extensions: mdxExtensions,
                 plugins: mdxPlugins,
+                remarkPlugins: mdPlugins,
                 gatsbyRemarkPlugins: mdxPlugins,
             }
         },
