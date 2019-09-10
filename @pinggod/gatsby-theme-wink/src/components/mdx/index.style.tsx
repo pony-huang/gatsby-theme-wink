@@ -16,6 +16,7 @@ export const Wrapper = Styled.div`
 
     pre, code {
         font-size: 14px;
+        font-weight: 400;
         font-family: 'Roboto Mono', Monaco, courier, monospace;
     }
 
