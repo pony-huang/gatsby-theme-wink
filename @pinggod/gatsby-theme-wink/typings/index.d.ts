@@ -55,6 +55,7 @@ declare namespace Wink {
 
     export interface Frontmatter {
         title: string;
+        date: string;
         description: string;
         cover: Cover;
         coverAuthor: string;

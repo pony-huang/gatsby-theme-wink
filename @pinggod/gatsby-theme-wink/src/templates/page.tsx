@@ -57,6 +57,7 @@ export const query = graphql`
         }
         frontmatter {
             title
+            date(formatString: "MMM DD, YYYY")
             description
             coverAuthor
             coverOriginalUrl

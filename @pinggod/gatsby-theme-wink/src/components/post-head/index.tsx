@@ -12,7 +12,7 @@ export const PostHead = (props: Props): React.ReactElement => {
     return (
         <S.Wrapper>
             <S.Main>
-                <S.PostTime>{post.file.birthTime}</S.PostTime>
+                <S.PostTime>{post.frontmatter.date}</S.PostTime>
                 <section>
                     <S.Title>{post.frontmatter.title}</S.Title>
                     <S.SubTitle>{post.frontmatter.description}</S.SubTitle>

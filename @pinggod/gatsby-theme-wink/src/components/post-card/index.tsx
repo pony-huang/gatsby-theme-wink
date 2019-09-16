@@ -12,7 +12,7 @@ export const PostCard = (props: Props): React.ReactElement => {
         <S.Wrapper to={post.fields.slug}>
             <S.Cover fluid={post.frontmatter.cover.childImageSharp.fluid} />
             <S.Main>
-                <S.PostTime>{post.file.birthTime}</S.PostTime>
+                <S.PostTime>{post.frontmatter.date}</S.PostTime>
                 <section>
                     <S.Title>{post.frontmatter.title}</S.Title>
                     <S.SubTitle>{post.frontmatter.description}</S.SubTitle>
