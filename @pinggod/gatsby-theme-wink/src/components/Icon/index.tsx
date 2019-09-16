@@ -19,6 +19,6 @@ export const Icon = (props: Props): React.ReactElement => {
     } = props;
 
     return (
-        <i className={`remixicon-${type}-${mode} ${className}`} style={style} />
+        <i className={`ri-${type}-${mode} ${className}`} style={style} />
     );
 };
