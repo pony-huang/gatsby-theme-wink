@@ -20,7 +20,7 @@ export const PaginationItem = Styled.div`
 `;
 
 export const PaginationLink = Styled(InnerLink)`
-    display: inline-block;
+    display: flex;
     margin: 48px 24px;
     font-size: 18px;
 `;
