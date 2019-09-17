@@ -13,7 +13,7 @@ export const Wrapper = Styled.footer`
 export const Copyright = Styled.span`
     display: flex;
     align-items: center;
-    font-weight: 300;
+    font-weight: 500;
 `;
 
 export const SocialList = Styled.ul`

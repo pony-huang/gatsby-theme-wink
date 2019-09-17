@@ -17,7 +17,7 @@ export const Title = Styled.h2`
 export const SubTitle = Styled.h4`
     display: inline;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
 
     &:before {
         content: ' ';

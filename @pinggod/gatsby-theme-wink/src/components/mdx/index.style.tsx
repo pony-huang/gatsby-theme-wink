@@ -14,6 +14,11 @@ export const Wrapper = Styled.div`
         font-weight: bold;
     }
 
+    p, li {
+        font-weight: 400;
+        font-family: "Source Sans Pro";
+    }
+
     pre, code {
         font-size: 14px;
         font-weight: 400;

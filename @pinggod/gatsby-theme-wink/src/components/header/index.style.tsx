@@ -19,16 +19,15 @@ export const LogoSection = Styled(InnerLink).attrs({
 export const LogoIcon = Styled(Icon).attrs({
     type: 'sailboat',
 })`
-    padding-right: 4px;
+    padding-right: 8px;
     font-size: 24px !important;
     vertical-align: sub;
 `;
 
 export const LogoTitle = Styled.h1`
     display: inline-block;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
-    font-family: Cereal;
 `;
 
 export const SearchIcon = Styled(Icon).attrs({
