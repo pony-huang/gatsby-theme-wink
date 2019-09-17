@@ -30,7 +30,7 @@ export const Title = Styled.h1`
 
 export const SubTitle = Styled.h2`
     font-size: 24px;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.4;
 `;
 
