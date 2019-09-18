@@ -7,6 +7,7 @@ interface Props {
     title: string;
     description: string;
     children: React.ReactElement;
+    siteMeta: Wink.Site;
 }
 
 export const Layout = (props: Props): React.ReactElement => (
@@ -15,8 +16,8 @@ export const Layout = (props: Props): React.ReactElement => (
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
         </Helmet>
-        <Header />
+        <Header siteMeta={props.siteMeta} />
         {props.children}
-        <Footer />
+        <Footer siteMeta={props.siteMeta} />
     </Fragment>
 );

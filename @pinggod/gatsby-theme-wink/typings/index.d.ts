@@ -24,6 +24,13 @@ declare namespace Wink {
         title: string;
         description: string;
         siteUrl: string;
+        author: string;
+        authorURL: string;
+        socials: {
+            icon: string;
+            name: string;
+            url: string;
+        }[];
     }
 
     export interface AllMdx {

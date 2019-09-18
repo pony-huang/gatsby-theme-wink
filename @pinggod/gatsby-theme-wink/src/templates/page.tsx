@@ -21,7 +21,8 @@ export default function Page(props: Props): React.ReactElement {
     return (
         <Layout
             title={data.site.siteMetadata.title}
-            description={data.site.siteMetadata.description}>
+            description={data.site.siteMetadata.description}
+            siteMeta={data.site}>
             <>
                 <PostList posts={posts} />
                 <Pagination prevPath={prevPath} nextPath={nextPath} />
@@ -31,6 +32,22 @@ export default function Page(props: Props): React.ReactElement {
 }
 
 export const query = graphql`
+    fragment SiteInfo on Site {
+        siteMetadata {
+            title
+            description
+            siteUrl
+            author
+            authorURL
+            socials {
+                icon
+                name
+                url
+            }
+        }
+        buildTime
+    }
+
     fragment Cover on File {
         childImageSharp {
             fluid(maxWidth: 1200) {
@@ -82,12 +99,7 @@ export const query = graphql`
 
     query posts($ids: [String]) {
         site {
-            siteMetadata {
-                title
-                description
-                siteUrl
-            }
-            buildTime
+            ...SiteInfo
         }
         allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: {id: {in: $ids}}) {
             totalCount

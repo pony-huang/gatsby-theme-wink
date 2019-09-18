@@ -15,6 +15,7 @@ export default function Post(props: Props): React.ReactElement {
 
     return (
         <Layout
+            siteMeta={data.site}
             title={`${data.node.frontmatter.title} · ${data.site.siteMetadata.title} `}
             description={data.node.frontmatter.description || data.site.siteMetadata.description}>
             <>
@@ -29,12 +30,7 @@ export default function Post(props: Props): React.ReactElement {
 export const query = graphql`
     query Post($id: String!, $prevId: String!, $nextId: String!) {
         site {
-            siteMetadata {
-                title
-                description
-                siteUrl
-            }
-            buildTime
+            ...SiteInfo
         }
         node: mdx(id: {eq: $id}) {
             ...NodeOverview

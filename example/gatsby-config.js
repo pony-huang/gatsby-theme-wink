@@ -5,6 +5,28 @@ module.exports = {
     description: `Zeno Sun's Personal Blog`,
     author: `Zeno Sun`,
     authorURL: `https://www.rxlnt.com`,
+    socials: [
+      {
+        icon: 'github',
+        name: 'GitHub',
+        url: 'https://github.com/pinggod',
+      },
+      {
+        icon: 'twitter',
+        name: 'Twitter',
+        url: 'https://twitter.com/ping4god',
+      },
+      {
+        icon: 'weibo',
+        name: 'Wibo',
+        url: 'https://weibo.com/2827844063',
+      },
+      {
+        icon: 'wechat',
+        name: 'Wechat',
+        url: '',
+      },
+    ]
   },
   plugins: [
     {
