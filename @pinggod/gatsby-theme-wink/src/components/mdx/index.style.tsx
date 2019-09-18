@@ -214,7 +214,11 @@ export const Td = Styled.td`
     font-weight: 300;
 `;
 
-export const Em = Styled.em``;
+export const Em = Styled.em`
+    padding: 2px 4px;
+    font-style: normal;
+    background: rgba(196,240,255,.5);
+`;
 
 export const Strong = Styled.strong`
     font-weight: bold;
