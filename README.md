@@ -1,3 +1,23 @@
+# gatsby-theme-wink
+
+a gatsby theme focus on content expression.
+
+- [x] Support MDX
+- [x] Support TypeScript
+
+## Intro
+
+## Quick Start
+
+## Data Models
+
+## Customization
+
+
+
+
+
+
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
