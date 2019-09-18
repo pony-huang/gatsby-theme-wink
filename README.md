@@ -13,8 +13,7 @@ a gatsby theme focus on content expression.
 
 ## Customization
 
-
-
+## Inspired
 
 
 

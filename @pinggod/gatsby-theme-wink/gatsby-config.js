@@ -4,7 +4,6 @@ const mdPlugins = [
 ];
 
 const mdxPlugins = [
-    // `gatsby-remark-slug`,
     {
         resolve: `gatsby-remark-images`,
         options: {
