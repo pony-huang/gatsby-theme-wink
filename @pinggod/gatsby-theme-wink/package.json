@@ -1,13 +1,9 @@
 {
   "name": "@pinggod/gatsby-theme-wink",
   "version": "0.4.3",
+  "description": "a gatsby theme focus on content expression",
   "main": "index.js",
   "author": "pinggodstudio@gmail.com",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "dependencies": {
     "@mdx-js/mdx": "^1.4.5",
     "@mdx-js/react": "^1.4.5",
@@ -50,5 +46,25 @@
   },
   "peerDependencies": {
     "gatsby": "^2"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinggod/gatsby-theme-wink",
+    "directory": "@pinggod/gatsby-theme-wink"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-theme-wink",
+    "blog",
+    "medium",
+    "articles",
+    "react",
+    "static web"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
