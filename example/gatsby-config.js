@@ -35,6 +35,7 @@ module.exports = {
         postPath: "content/posts",
         mdxExtensions: [".mdx", ".md"],
         ga: "UA-137858782-1",
+        htmlLang: "zh",
       }
     },
     {

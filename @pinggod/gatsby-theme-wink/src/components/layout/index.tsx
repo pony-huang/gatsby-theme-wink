@@ -13,7 +13,6 @@ interface Props {
 export const Layout = (props: Props): React.ReactElement => (
     <Fragment>
         <Helmet>
-            <html lang="en" />
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
         </Helmet>

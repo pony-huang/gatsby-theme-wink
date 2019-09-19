@@ -18,7 +18,8 @@ const mdxPlugins = [
 module.exports = ({
     postPath = "content/posts",
     mdxExtensions = [".mdx", ".md"],
-    ga = ""
+    ga = "",
+    htmlLang = "en",
 }) => ({
     plugins: [
         `gatsby-transformer-sharp`,
@@ -51,6 +52,12 @@ module.exports = ({
             resolve: `gatsby-plugin-google-analytics`,
             options: {
                 trackingId: ga
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-html-attributes',
+            options: {
+                lang: htmlLang,
             }
         },
         `gatsby-plugin-styled-components`,
