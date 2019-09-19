@@ -8,6 +8,7 @@ interface Props {
 
 export const PostHead = (props: Props): React.ReactElement => {
     const { post } = props;
+    const coverFrom = new URL(post.frontmatter.coverOriginalUrl);
 
     return (
         <S.Wrapper>
@@ -23,7 +24,7 @@ export const PostHead = (props: Props): React.ReactElement => {
                 <S.CoverMeta>
                     <span>photo by &nbsp;</span>
                     <OuterLink href={post.frontmatter.coverOriginalUrl}>{post.frontmatter.coverAuthor}</OuterLink>
-                    <span>&nbsp;on unsplash.com</span>
+                    <span>&nbsp;on {coverFrom.hostname}</span>
                 </S.CoverMeta>
             </S.CoverWrapper>
         </S.Wrapper>
