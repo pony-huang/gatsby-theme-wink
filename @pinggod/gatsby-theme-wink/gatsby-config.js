@@ -4,12 +4,12 @@ const mdPlugins = [
 ];
 
 const mdxPlugins = [
+    `gatsby-remark-katex`,
     {
         resolve: `gatsby-remark-images`,
         options: {
             maxWidth: 1200,
             linkImagesToOriginal: false,
-            quality: 80,
             withWebp: true,
         },
     },

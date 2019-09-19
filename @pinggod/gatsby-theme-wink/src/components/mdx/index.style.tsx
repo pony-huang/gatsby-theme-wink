@@ -30,8 +30,8 @@ export const InlineCode = Styled.code`
     margin: 0 4px;
     padding: 2px 8px;
     border-radius: 4px;
-    color: #452108;
-    background: #fcf1e8;
+    font-weight: 500 !important;
+    background: rgb(239, 243, 245)
 `;
 
 export const Pre = Styled.pre`
