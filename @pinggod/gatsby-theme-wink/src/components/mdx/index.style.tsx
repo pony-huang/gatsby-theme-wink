@@ -24,21 +24,14 @@ export const Wrapper = Styled.div`
         font-weight: 400;
         font-family: 'Roboto Mono', Monaco, courier, monospace;
     }
-
-    .gatsby-resp-image-wrapper {
-        margin: 16px 0 !important;
-
-        span {
-            visibility: hidden;
-        }
-    }
 `;
 
 export const InlineCode = Styled.code`
     margin: 0 4px;
     padding: 2px 8px;
     border-radius: 4px;
-    background: rgb(239, 243, 245);
+    color: #452108;
+    background: #fcf1e8;
 `;
 
 export const Pre = Styled.pre`

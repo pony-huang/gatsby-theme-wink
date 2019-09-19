@@ -10,16 +10,9 @@ interface ImageProps {
 }
 
 export const Image = (props: ImageProps): React.ReactElement => {
-    const imageProps = {
-        ...props,
-        style: {
-            margin: '16px 0',
-        }
-    }
-
     return (
         <ImageWithZoom
-            image={imageProps}
-            zoomImage={imageProps} />
+            image={props}
+            zoomImage={props} />
     );
 }
