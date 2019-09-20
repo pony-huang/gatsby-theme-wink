@@ -152,7 +152,7 @@ export const P = Styled.p`
     margin: 16px 0;
     font-size: 16px;
     line-height: 28px;
-    font-weight: 300;
+    font-weight: 400;
     word-break: break-word;
     hyphens: auto;
 `;
@@ -200,7 +200,7 @@ export const Ol = Styled.ol``;
 
 export const Li = Styled.li`
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
 `;
 
 export const Table = Styled.table`
@@ -229,7 +229,7 @@ export const Td = Styled.td`
     text-align: left;
     padding: 8px 16px;
     border-top: 1px solid rgb(204, 217, 223);
-    font-weight: 300;
+    font-weight: 400;
 `;
 
 export const Em = Styled.em`

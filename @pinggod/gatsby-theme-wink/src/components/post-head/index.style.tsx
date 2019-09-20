@@ -55,6 +55,6 @@ export const CoverImage = Styled(Image)`
 export const CoverMeta = Styled.p`
     padding: 16px 0;
     color: rgba(0, 0, 0, 0.65);
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 `;
