@@ -19,7 +19,6 @@ const mdxPlugins = [
             aliases: {
                 sh: 'bash',
             },
-
         }
     }
 ];

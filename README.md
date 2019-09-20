@@ -1,5 +1,7 @@
 # gatsby-theme-wink
 
+![gatsby-theme-wink-snapshoot](https://raw.githubusercontent.com/pinggod/gatsby-theme-wink/master/asserts/snapshoot.png)
+
 a gatsby theme focus on content expression.
 
 - [x] Support MDX
