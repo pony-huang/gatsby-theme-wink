@@ -116,7 +116,6 @@ export const Pre = Styled.pre`
 
     .token.entity {
         color: #657b83;
-        background: #eee8d5;
     }
 
     .token.function,
@@ -127,7 +126,7 @@ export const Pre = Styled.pre`
     .token.regex,
     .token.important,
     .token.variable {
-        color: red;
+        color: rgb(225, 109, 117);
     }
 
     .token.operator {
