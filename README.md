@@ -1,6 +1,6 @@
 # gatsby-theme-wink
 
-![gatsby-theme-wink-snapshoot](https://raw.githubusercontent.com/pinggod/gatsby-theme-wink/master/asserts/snapshoot.png)
+![gatsby-theme-wink-snapshoot](https://user-images.githubusercontent.com/9530963/65311536-1c374280-dbc3-11e9-855b-8cf2778b8399.png)
 
 a gatsby theme focus on content expression.
 
