@@ -12,6 +12,176 @@ JSON Schema(`media type: application/schema+json`) 是一种**基于 JSON 格式
 
 $a^2 + b^2 = c^2$
 
+```typescript
+// Retrieve all users
+const allUsers: User[] = await prisma.users() // highlight-line
+
+// Retrieve a single user by email
+const bob: User = await prisma
+  .users({ email: "bob@prisma.io" }) // highlight-line
+
+// Retrieve all comments of a post in a single request
+const commentsOfPost: Comment[] = await prisma
+  .post({ id: "cjl4srkaqqxa30b46pqcyzpyo" })
+  .comments()
+```
+
+```ts
+// Fetch all published posts about GraphQL by authors with Prisma-email
+const posts: Post[] = await prisma.posts({
+  where: {
+    published: true,
+    title_contains: "GraphQL"
+    author: {
+      email_ends_with: "@prisma.io"
+    }
+  },
+  orderBy: "createdAt_ASC"
+})
+```
+
+```ts
+// Create a new user with two posts
+const newUser: User = await prisma.createUser({
+  email: "alice@prisma.io",
+  posts: {
+    create: [{
+      title: "Join us for Prisma Day. June 19, Berlin!"
+    }, {
+      title: "Follow Prisma on Twitter"
+    }]
+  }
+})
+```
+
+```ts 
+// Notify when any users are created, updated or deleted
+const userAsyncIterator = prisma.$subscribe.user().node()
+for await (const newUser of userAsyncIterator) {
+  console.log(`New user: ${newUser}`);
+}
+
+// Get about when Gmail users are deleted
+const userAsyncIterator = prisma.$subscribe.user({
+  where: {
+    mutation_in: ["DELETED"]
+    email_ends_with: "@gmail.com"
+  }
+}).node()
+```
+
+```ts
+// Send a raw GraphQL query
+const graphQLResult: any = await prisma.$graphql(`
+query {
+  posts {
+    title
+    author { name }
+  }
+}
+`)
+
+// Use GraphQL fragments for field selection
+const posts: any = await prisma
+  .posts()
+  .$fragment(`
+    fragment PostWithAuthorsAndComments on Post {
+      title
+      author { name }
+      comments { text }
+    }
+  `)
+```
+
+```ts
+# Define your datamodel using declarative SDL syntax
+type User {
+  id: ID! @id
+  email: String! @unique
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  title: String!
+  published: Boolean! @default(value: "false")
+  author: User!
+}
+```
+
+```go
+// Retrieve all users
+allUsers, err := client.Users(nil).Exec(ctx)
+
+// Retrieve a single user by email
+email := "alice@prisma.io"
+user, err := client.User(prisma.UserWhereUniqueInput{
+  Email: &email,
+}).Exec(ctx)
+
+// Retrieve all comments of a post in a single request
+id := "cjn62fvebcih00b84zzjclg1t"
+commentsOfPost, err := client.Post(prisma.PostWhereUniqueInput{
+  ID: &id,
+}).Comments(nil).Exec(ctx)
+```
+
+```go 
+// Fetch all published posts about GraphQL or REST
+published := true
+filter1 := "GraphQL"
+filter2 := "REST"
+orderBy := prisma.PostOrderByInputCreatedAtAsc
+posts, err := client.Posts(&prisma.PostsParams{
+  Where: &prisma.PostWhereInput{
+    And: []prisma.PostWhereInput{
+      prisma.PostWhereInput{Published: &published},
+      prisma.PostWhereInput{
+        Or: []prisma.PostWhereInput{
+          prisma.PostWhereInput{TitleContains: &filter1},
+          prisma.PostWhereInput{TitleContains: &filter2},
+        },
+      },
+    },
+  },
+  OrderBy: &orderBy,
+}).Exec(ctx)
+```
+
+```go 
+// Create a new user with two posts
+email := "alice@prisma.io"
+title1 := "Join us for Prisma Day. June 19, Berlin!"
+title2 := "Follow Prisma on Twitter"
+newUser, err := client.CreateUser(prisma.UserCreateInput{
+  Email: email,
+  Posts: &prisma.PostCreateManyWithoutAuthorInput{
+    Create: []prisma.PostCreateWithoutAuthorInput{
+      prisma.PostCreateWithoutAuthorInput{Title: title1},
+      prisma.PostCreateWithoutAuthorInput{Title: title2},
+    },
+  },
+}).Exec(ctx)
+```
+
+```graphql
+# Define your datamodel using declarative SDL syntax
+type User {
+  id: ID! @id
+  email: String! @unique
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  title: String!
+  published: Boolean! @default(value: "false")
+  author: User!
+}
+```
+
 ---
 
 ## Core
@@ -70,7 +240,7 @@ JSON Schema 中的 `$schema` 关键字必须在 JSON Schema 文档的根结点�
 }
 ```
 
-#### Resolution Scope
+#### Resolution Scope `$Schema`
 
 JSON Schema 基于 [json-reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03) 实现引用解析，同时进行了两点扩展：
 
@@ -114,8 +284,9 @@ JSON Schema 基于 [json-reference](https://tools.ietf.org/html/draft-pbryan-zyp
 有两种机制可以生成解析区域：`Canonical dereferencing` 和 `Inline dereferencing`。以下面代码为例：
 
 ```json
+{/* highlight-range{1,4-6} */}
 {
-    "id": "http://my.site/myschema#",
+    "id": "http://my.site/myschema#http://my.site/myschema#http://my.site/myschema#http://my.site/myschema#http://my.site/myschema#",
     "definitions": {
         "schema1": {
             "id": "schema1",

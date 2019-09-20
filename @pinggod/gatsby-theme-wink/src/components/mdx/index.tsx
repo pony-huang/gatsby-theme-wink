@@ -27,7 +27,7 @@ const components = {
     td: S.Td,
     th: S.Th,
     pre: S.Pre,
-    inlineCode: S.InlineCode,
+    code: S.Code,
     em: S.Em,
     strong: S.Strong,
     hr: S.Hr,

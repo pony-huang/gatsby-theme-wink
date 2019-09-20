@@ -1,6 +1,5 @@
 const mdPlugins = [
     require("remark-slug"),
-    require("remark-highlight.js"),
 ];
 
 const mdxPlugins = [
@@ -13,6 +12,16 @@ const mdxPlugins = [
             withWebp: true,
         },
     },
+    {
+        resolve: `gatsby-remark-prismjs`,
+        options: {
+            showLineNumbers: true,
+            aliases: {
+                sh: 'bash',
+            },
+
+        }
+    }
 ];
 
 module.exports = ({
