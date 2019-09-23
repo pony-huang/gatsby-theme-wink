@@ -22,7 +22,7 @@ export const PostHead = (props: Props): React.ReactElement => {
             <S.CoverWrapper>
                 <S.CoverImage fluid={post.frontmatter.cover.childImageSharp.fluid} />
                 <S.CoverMeta>
-                    <span>photo by &nbsp;</span>
+                    <span>photo by&nbsp;</span>
                     <OuterLink href={post.frontmatter.coverOriginalUrl}>{post.frontmatter.coverAuthor}</OuterLink>
                     <span>&nbsp;on {coverFrom.hostname}</span>
                 </S.CoverMeta>
