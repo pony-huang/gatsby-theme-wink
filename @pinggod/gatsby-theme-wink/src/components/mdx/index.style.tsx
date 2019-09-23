@@ -77,7 +77,7 @@ export const Pre = Styled.pre`
     .token.prolog,
     .token.doctype,
     .token.cdata {
-        color: rgb(143, 166, 178);
+        color: #6a737d;
     }
 
     .token.punctuation {
