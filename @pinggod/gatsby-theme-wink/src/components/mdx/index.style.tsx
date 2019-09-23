@@ -34,8 +34,8 @@ export const Pre = Styled.pre`
     padding: 16px 16px 16px 48px;
     font-size: 14px;
     line-height: 2;
-    color: rgb(36, 218, 141);
-    background: rgb(12, 52, 75);
+    color: #22863a;
+    border: 1px solid #d1d5da;
     overflow-x: scroll;
     tab-size: 4;
     hyphens: none;
@@ -60,7 +60,7 @@ export const Pre = Styled.pre`
                 content: counter(linenumber);
                 display: block;
                 text-align: right;
-                color: rgb(143, 166, 178);
+                color: rgba(27,31,35,.3);
             }
         }
     }
@@ -70,7 +70,7 @@ export const Pre = Styled.pre`
         width: calc(100% + 16px);
         margin-left: -48px;
         padding-left: 48px;
-        background-color: rgba(41, 81, 102, 0.4);
+        background-color: #fffbdd;
     }
 
     .token.comment,
@@ -81,7 +81,7 @@ export const Pre = Styled.pre`
     }
 
     .token.punctuation {
-        color: rgb(143, 166, 178);
+        color: #24292e;
     }
 
     .namespace {
@@ -95,7 +95,7 @@ export const Pre = Styled.pre`
     .token.constant,
     .token.symbol,
     .token.deleted {
-        color: rgb(255, 204, 153);
+        color: #e36209;
     }
 
     .token.selector,
@@ -105,13 +105,13 @@ export const Pre = Styled.pre`
     .token.builtin,
     .token.url,
     .token.inserted {
-        color: rgb(255, 227, 118);
+        color: #005cc5;
     }
 
     .token.atrule,
     .token.attr-value,
     .token.keyword {
-        color: rgb(255, 146, 240);
+        color: #d73a49;
     }
 
     .token.entity {
@@ -120,7 +120,7 @@ export const Pre = Styled.pre`
 
     .token.function,
     .token.class-name {
-        color: rgb(111, 188, 255);
+        color: #6f42c1;
     }
 
     .token.regex,
@@ -130,7 +130,7 @@ export const Pre = Styled.pre`
     }
 
     .token.operator {
-        color: rgb(224, 145, 66);
+        color: #e36209;
     }
 
     .token.important,
