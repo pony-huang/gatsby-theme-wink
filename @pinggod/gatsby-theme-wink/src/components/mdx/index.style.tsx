@@ -30,7 +30,7 @@ export const Code = Styled.code`
 export const Pre = Styled.pre`
     position: relative;
     margin: 16px 0;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 16px 16px 16px 48px;
     font-size: 14px;
     line-height: 2;
@@ -84,8 +84,8 @@ export const Pre = Styled.pre`
         color: #24292e;
     }
 
-    .namespace {
-        opacity: .7;
+    .token.namespace {
+        opacity: 1;
     }
 
     .token.property,
@@ -230,6 +230,7 @@ export const Td = Styled.td`
     padding: 8px 16px;
     border-top: 1px solid rgb(204, 217, 223);
     font-weight: 400;
+    font-family: "Source Sans Pro";
 `;
 
 export const Em = Styled.em`
