@@ -1,21 +1,29 @@
 ::selection {
     color: #FFFFFF;
-    background-color: rgb(15,122,216);
+    background-color: rgb(15, 122, 216);
 }
 
-html, body {
+html,
+body {
     font-size: 14px;
     line-height: 1.6;
-    font-family: "Heebo", 'Source Han Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji';
+    font-family: "Heebo", 'Source Han Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', Helvetica, Arial, sans-serif, 'Apple Color Emoji';
     color: #3c3f45;
     background-color: #fff;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
-html, body,
-h1, h2, h3, h4, h5, h6,
-ul, p {
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
     margin: 0;
     padding: 0;
 }
