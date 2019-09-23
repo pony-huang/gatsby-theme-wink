@@ -24,6 +24,7 @@ export const Code = Styled.code`
     margin: 0 4px;
     padding: 2px 8px;
     border-radius: 4px;
+    font-size: 14px;
     background: rgb(239, 243, 245);
 `;
 
@@ -32,7 +33,6 @@ export const Pre = Styled.pre`
     margin: 16px 0;
     border-radius: 4px;
     padding: 16px 16px 16px 48px;
-    font-size: 14px;
     line-height: 2;
     color: #22863a;
     border: 1px solid #d1d5da;
