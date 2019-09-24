@@ -1,83 +1,73 @@
 ![gatsby-theme-wink-snapshoot](https://user-images.githubusercontent.com/9530963/65311536-1c374280-dbc3-11e9-855b-8cf2778b8399.png)
 
-a gatsby theme focus on content expression.
-
-- [x] Support MDX
-- [x] Support TypeScript
-
-## Intro
-
-## Quick Start
-
-## Data Models
-
-## Customization
-
-## Inspired
-
-
-
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Starter for creating a Gatsby Theme workspace
-</h1>
+## 安装
 
 ```shell
-gatsby new my-theme https://github.com/gatsbyjs/gatsby-starter-theme-workspace
-cd my-theme
-yarn workspace example develop
+yarn add @pinggod/gatsby-theme-wink gatsby-plugin-manifest
 ```
 
-## Layout
+## 配置
 
-```shell
-.
-├── README.md
-├── gatsby-theme-minimal
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── index.js
-│   └── package.json
-├── example
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── package.json
-│   └── src
-├── package.json
-└── yarn.lock
-
-3 directories, 10 files
+```js:gatsby-config.js
+{
+  plugins: [
+    {
+      resolve: `@pinggod/gatsby-theme-wink`,
+      options: {
+        // 文章所在目录
+        postPath: "content/posts",
+        mdxExtensions: [".mdx", ".md"],
+        // google analytics ID
+        ga: "UA-137858782-1",
+        // 设置 HTML lang 属性
+        htmlLang: "zh",
+      }
+    },
+    // 设置 favicon 和 manifest
+    // 文档地址：https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/
+    // 
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'REXLNT',
+        short_name: 'REXLNT',
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        icon: "static/favicon.png",
+      },
+    }
+  ]
+}
 ```
 
-### `gatsby-theme-minimal`
+## 创建文章
 
-This directory is the theme package itself. You should rename this at
-some point to be `gatsby-theme-{my-theme-name}`. Also change the
-`package.json` name field and the corresponding dependency in the
-example directory's `package.json`/`gatsby-config.js` to match the chosen name.
+比如在路径 `content/posts/2019-02-02-gatsby-quick-start/index.mdx` 创建一篇文章，内容如：
 
-- `gatsby-theme-minimal/`
-  - `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
-  - `index.js`: Since themes also function as plugins, this is an empty file that
-    gatsby needs to use this theme as a plugin.
-  - `package.json`: The dependencies that your theme will pull in when people install it. `gatsby` should be a `peerDependency`.
+```mdx
+---
+title: Consectetur Adipisicing
+description: Ipsa odio, dignissimos consectetur debitis harum eaque maiores soluta voluptate
+date: '2019-03-16T05:45:02.000Z'
+published: true
+cover: ./aditya-chinchure-hyN9aU9Tm-c-unsplash.jpg
+coverAuthor: Aditya Chinchure
+coverOriginalUrl: https://unsplash.com/photos/hyN9aU9Tm-c
+---
 
-### `example`
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae in, deleniti tempora mollitia minima et delectus exercitationem earum. Velit error voluptatem recusandae aspernatur iure tenetur animi provident expedita id in.
 
-This is an example usage of your theme. It should look the same as the
-site of someone who installed and used your theme from npm.
-
-- `example/`
-  - `gatsby-config.js`: Specifies which theme to use and any other one-off config a site might need.
-  - `src/`: Source code such as one-off pages or components that might live in
-    a user's site.
-
-You can run the example with:
-
-```shell
-yarn workspace example develop
+Repellendus voluptas ullam, tenetur vitae nisi eligendi iste laborum eaque rerum officia quam cumque eum quisquam exercitationem at beatae corporis placeat, asperiores odit velit numquam. Architecto expedita possimus saepe omnis?
 ```
+
+`frontmatter` 中的属性介绍：
+
+- `title`: 必填，文章标题
+- `description`: 选填，文章简介
+- `date`: 必填，创建时间
+- `published`: 必填，true 为对外发布，false 则不对外发布，最终只构建生成为 true 的文章，false 可用于标记草稿
+- `cover`: 必填，文章题图
+- `coverAuthor`: 必填，文章题图作者
+- `coverOriginalUrl`: 必填，文章题图原始地址
