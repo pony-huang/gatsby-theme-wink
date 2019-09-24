@@ -3,7 +3,10 @@ import * as S from "./index.style";
 
 const Logo = (): React.ReactElement => {
     return (
-        <S.LogoIcon />
+        <div>
+            <S.LogoIcon />
+            <img src="/avatar.jpg" alt="" />
+        </div>
     );
 };
 
