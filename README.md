@@ -8,7 +8,7 @@ yarn add @pinggod/gatsby-theme-wink gatsby-plugin-manifest
 
 ## 配置
 
-```js:gatsby-config.js
+```js
 {
   plugins: [
     {
@@ -46,7 +46,7 @@ yarn add @pinggod/gatsby-theme-wink gatsby-plugin-manifest
 
 比如在路径 `content/posts/2019-02-02-gatsby-quick-start/index.mdx` 创建一篇文章，内容如：
 
-```mdx
+```tsx
 ---
 title: Consectetur Adipisicing
 description: Ipsa odio, dignissimos consectetur debitis harum eaque maiores soluta voluptate
