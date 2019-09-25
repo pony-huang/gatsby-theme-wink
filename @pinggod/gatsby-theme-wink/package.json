@@ -1,6 +1,6 @@
 {
     "name": "@pinggod/gatsby-theme-wink",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "a gatsby theme focus on content expression",
     "main": "index.js",
     "author": "pinggodstudio@gmail.com",
