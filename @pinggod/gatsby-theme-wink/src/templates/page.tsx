@@ -50,17 +50,12 @@ export const query = graphql`
 
     fragment Cover on File {
         childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 1200, maxHeight: 500, pngCompressionSpeed: 8,  cropFocus: CENTER) {
                 base64
-                tracedSVG
                 aspectRatio
                 src
                 srcSet
-                srcWebp
-                srcSetWebp
                 sizes
-                originalImg
-                originalName
                 presentationWidth
                 presentationHeight
             }
