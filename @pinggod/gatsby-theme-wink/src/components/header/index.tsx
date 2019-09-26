@@ -10,7 +10,7 @@ interface Props {
 const Header = (props: Props): React.ReactElement => {
     return (
         <S.Wrapper>
-            <S.LogoSection>
+            <S.LogoSection to="/">
                 <Logo />
                 <S.LogoTitle>
                     {props.siteMeta.siteMetadata.title.toUpperCase()}

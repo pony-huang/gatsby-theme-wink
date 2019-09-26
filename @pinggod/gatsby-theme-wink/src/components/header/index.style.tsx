@@ -12,9 +12,7 @@ export const Wrapper = Styled.header`
     padding: 48px 0;
 `;
 
-export const LogoSection = Styled(InnerLink).attrs({
-    to: '/',
-})``;
+export const LogoSection = Styled(InnerLink)``;
 
 export const LogoIcon = Styled(Icon).attrs({
     type: 'sailboat',
